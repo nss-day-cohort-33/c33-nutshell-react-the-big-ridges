@@ -14,6 +14,13 @@ export default class ApplicationViews extends Component {
           }}
         />
 
+          <Route
+          exact path="/events" render={props => {
+            return null
+            // Remove null and return the component which will show news articles
+          }}
+        />
+
         <Route
           path="/friends" render={props => {
             return null
@@ -34,7 +41,7 @@ export default class ApplicationViews extends Component {
             // Remove null and return the component which will show the user's tasks
           }}
         />
-        
+
       </React.Fragment>
     );
   }
