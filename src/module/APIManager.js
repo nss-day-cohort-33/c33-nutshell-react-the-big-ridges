@@ -20,9 +20,14 @@ export default Object.create(null, {
 
     delete: {
         value: function (resource, id) {
+          console.log("id", id)
             return fetch(`${remoteURL}/${resource}/${id}`, {
-                method: "DELETE"
-            }).then(e => e.json())
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                  }
+            })
+            .then(e => e.json())
         }
     },
 

@@ -34,115 +34,42 @@
   "friends": [],
   "messages": [
     {
-      "id": 1,
-      "message": "Hi guysEDITEDITEDITssss",
-      "timeStamp": 1563900600257,
-      "userId": 1
-    },
-    {
       "id": 2,
-      "message": "blah  blahzzzz",
-      "timeStamp": 1563898116956,
+      "message": "things",
+      "timeStamp": 1563910676257,
       "userId": 1
     },
     {
       "id": 3,
-      "message": "hello WORLDsss",
-      "timeStamp": 1563901560206,
+      "message": "blah blah blah",
+      "timeStamp": 1563910670840,
       "userId": 1
     },
     {
-      "userId": 2,
-      "message": "hey",
-      "timestamp": 1563842088553,
+      "userId": 1,
+      "message": "you go girl",
+      "timestamp": 1563910526465,
       "id": 4
-    },
-    {
-      "userId": 3,
-      "message": "hey",
-      "timestamp": 1563842108904,
-      "id": 5
-    },
-    {
-      "id": 6,
-      "message": "blahsss",
-      "timeStamp": 1563905801454,
-      "userId": 1
     }
   ],
   "events": [
     {
       "userId": 1,
-      "title": "party",
-      "date": "2019-07-11",
-      "time": "21:00",
-      "location": "david's house",
+      "title": "fdsa",
+      "date": "fdsa",
+      "time": "fdsa",
+      "location": "fdsa",
       "id": 1
     },
     {
-      "userId": 2,
-      "title": "take out trask",
-      "date": "2019-07-27",
-      "time": "15:00",
-      "location": "my house",
+      "userId": 1,
+      "title": "fdsa",
+      "date": "asdf",
+      "time": "dsafa",
+      "location": "qevae",
       "id": 2
     }
   ],
-  "news": [
-    {
-      "userId": 1,
-      "url": "whatever",
-      "title": "Danger",
-      "synopsis": "gravel road on Balsam Mountain",
-      "timeStamp": 1562705030804,
-      "id": 1
-    },
-    {
-      "userId": 2,
-      "url": "http://www.google.com",
-      "title": "something newaaaa",
-      "synopsis": "bbbbb",
-      "timeStamp": 1562720082584,
-      "id": 2
-    },
-    {
-      "userId": 2,
-      "url": "http://www.google.com",
-      "title": "BBBBB22222",
-      "synopsis": "xcxc",
-      "timeStamp": 1562705971796,
-      "id": 3
-    },
-    {
-      "userId": 3,
-      "url": "",
-      "title": "",
-      "synopsis": "",
-      "timeStamp": 1562706033138,
-      "id": 4
-    }
-  ],
-  "tasks": [
-    {
-      "task": "stop talking",
-      "date": "2019-07-15",
-      "userId": 1,
-      "complete": false,
-      "id": 1
-    },
-    {
-      "task": "a new task",
-      "date": "",
-      "userId": 2,
-      "complete": true,
-      "id": 2
-    },
-    {
-      "task": "",
-      "date": "2019-07-19",
-      "userId": 2,
-      "complete": true,
-      "id": 3
-    }
-  ]
+  "news": [],
+  "tasks": []
 }

@@ -23,7 +23,7 @@ export default class MessageEditForm extends Component {
           id: this.props.match.params.messageId,
           message: this.state.message,
           timeStamp: Date.now(),
-          userId: parseInt(sessionStorage.getItem("user"))
+          userId: parseInt(sessionStorage.getItem("userId"))
         };
 
             this.props.updateMessage(editedMessage)
