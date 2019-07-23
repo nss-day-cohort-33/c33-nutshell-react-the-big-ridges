@@ -1,7 +1,6 @@
 {
   "events": [
     {
-      "userId": null,
       "title": "asdf",
       "date": "asdf",
       "time": "asdf",
@@ -9,20 +8,11 @@
       "id": 1
     },
     {
-      "userId": null,
-      "title": "zxcv",
-      "date": "thing",
-      "time": "thing",
-      "location": "thing",
+      "title": "stuff",
+      "date": "thingy",
+      "time": "thingy",
+      "location": "thingy",
       "id": 2
-    },
-    {
-      "userId": null,
-      "title": "zxcv",
-      "date": "ZCXv",
-      "time": "zxcv",
-      "location": "adsf",
-      "id": 3
     }
   ],
   "news": [],

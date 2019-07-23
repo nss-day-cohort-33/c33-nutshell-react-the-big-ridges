@@ -2,8 +2,8 @@
 import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import EventsList from "./events/EventsList";
 import APIManager from "../module/APIManager";
+import EventsList from "./events/EventsList";
 import EventsForm from "./events/EventsForm";
 import EventsEditForm from "./events/EventsEditForm";
 
@@ -103,8 +103,7 @@ class ApplicationViews extends Component {
         />
 
         <Route
-          exact
-          path="events/:eventId(\d+)/edit"
+          path="/events/:eventId(\d+)/edit"
           render={props => {
             return (
               <EventsEditForm
