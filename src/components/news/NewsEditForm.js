@@ -5,7 +5,7 @@ import "./News.css"
 export default class NewsEditForm extends Component {
     state = {
         userId: "",
-        articleTitle: "",
+        title: "",
         url: "",
         synopsis: ""
     };
@@ -19,20 +19,20 @@ export default class NewsEditForm extends Component {
     updateExistingArticle = evt => {
       evt.preventDefault()
 
-      if (!this.state.newsId) {
-        window.alert("Please fix this Sam");
-      } else {
+    //   if (!this.state.newsId) {
+    //     window.alert("Please fix this Sam");
+    //   } else {
         const editedArticle = {
             id: this.props.match.params.newsId,
             userId: parseInt(sessionStorage.getItem("userId")),
-            title: this.state.articleTitle,
+            title: this.state.title,
             url: this.state.url,
             synopsis: this.state.synopsis
         };
 
     this.props.updateArticle(editedArticle)
     .then(() => this.props.history.push("/news"))
-    }
+    // }
   }
 
     componentDidMount() {
@@ -40,7 +40,7 @@ export default class NewsEditForm extends Component {
       .then(article => {
         this.setState({
             userId: article.userId,
-            title: article.articleTitle,
+            title: article.title,
             url: article.url,
             synopsis: article.synopsis
         });
@@ -53,14 +53,14 @@ export default class NewsEditForm extends Component {
         <React.Fragment>
           <form className="newsEditForm">
             <div className="form-group">
-                    <label htmlFor="articleTitle">Title</label>
+                    <label htmlFor="title">Title</label>
                     <input
                     type="text"
                     required
                     className="form-control"
                     onChange={this.handleFieldChange}
-                    id="articleTitle"
-                    placeholder="Article Title"
+                    id="title"
+                    value = {this.state.title}
                     />
                 </div>
                 <div className="form-group">
@@ -71,7 +71,7 @@ export default class NewsEditForm extends Component {
                         className="form-control"
                         onChange={this.handleFieldChange}
                         id="url"
-                        placeholder="URL"
+                        value = {this.state.url}
                     />
                 </div>
                 <div className="form-group">
@@ -82,7 +82,7 @@ export default class NewsEditForm extends Component {
                         className="form-control"
                         onChange={this.handleFieldChange}
                         id="synopsis"
-                        placeholder="Synopsis"
+                        value = {this.state.synopsis}
                     />
                 </div>
             <button

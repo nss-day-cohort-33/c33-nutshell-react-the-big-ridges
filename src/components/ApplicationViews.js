@@ -41,7 +41,7 @@ export default class ApplicationViews extends Component {
     return APIManager.delete("news", id)
     .then ( () => APIManager.getAll("news"))
     .then(news => {
-        this.props.history.push("/news")
+        // this.props.history.push("/news")
         this.setState({
         news: news
       })

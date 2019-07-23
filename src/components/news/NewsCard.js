@@ -23,7 +23,11 @@ export default class NewsCard extends Component {
                         <button
                             type="button"
                             className="btn btn-success"
-                            onClick={() => this.props.deleteArticle(this.props.article.id)}
+                            onClick={() => {
+                                this.props.deleteArticle(this.props.article.id)
+                                this.props.history.push("/news")
+                            }
+                            }
                             className="card-link">Delete
                         </button>
                     </div>

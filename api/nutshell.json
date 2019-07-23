@@ -54,26 +54,31 @@
   "news": [
     {
       "userId": 1,
-      "url": "whatever",
-      "title": "Danger",
-      "synopsis": "gravel road on Balsam Mountain",
-      "timeStamp": 1562705030804,
+      "title": "Sam",
+      "url": "Sam",
+      "synopsis": "Sam",
       "id": 1
     },
     {
-      "userId": 3,
-      "url": "kkkn",
-      "title": "khjkjh",
-      "synopsis": "hhjnj",
-      "timeStamp": 1562706033138,
-      "id": 4
+      "userId": 1,
+      "title": "Drew",
+      "url": "Drew",
+      "synopsis": "Drew",
+      "id": 3
     },
     {
       "userId": 1,
-      "title": "drew",
-      "url": "drew",
-      "synopsis": "drew",
-      "id": 5
+      "title": "Berk",
+      "url": "Berk",
+      "synopsis": "Berk",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "userId": null,
+      "title": "Curt3",
+      "url": "Curt3",
+      "synopsis": "Curt3"
     }
   ],
   "tasks": [
