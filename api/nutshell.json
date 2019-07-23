@@ -1,0 +1,33 @@
+{
+  "events": [
+    {
+      "userId": null,
+      "title": "asdf",
+      "date": "asdf",
+      "time": "asdf",
+      "location": "asdf",
+      "id": 1
+    },
+    {
+      "userId": null,
+      "title": "zxcv",
+      "date": "thing",
+      "time": "thing",
+      "location": "thing",
+      "id": 2
+    },
+    {
+      "userId": null,
+      "title": "zxcv",
+      "date": "ZCXv",
+      "time": "zxcv",
+      "location": "adsf",
+      "id": 3
+    }
+  ],
+  "news": [],
+  "tasks": [],
+  "messages": [],
+  "users": [],
+  "friends": []
+}
