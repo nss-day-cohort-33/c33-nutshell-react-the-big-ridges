@@ -13,7 +13,7 @@ export default class ApplicationViews extends Component {
     tasks: [],
     events: [],
     news: [],
-    user: []
+    users: []
   }
 
    componentDidMount() {
@@ -29,7 +29,7 @@ export default class ApplicationViews extends Component {
    }
 
    addMessage = message => APIManager.post(message, "messages")
-   .then(() => APIManager.getAllExpand("messages", "users"))
+   .then(() => APIManager.getAllExpand("messages", "user"))
    .then(messages => {
        this.setState({
            messages: messages
@@ -37,8 +37,8 @@ export default class ApplicationViews extends Component {
    })
 
    updateMessage = (editedMessageObject) => {
-    return APIManager.put("messages", editedMessageObject)
-    .then(() => APIManager.getAllExpand("messages", "users"))
+    return APIManager.put(editedMessageObject, "messages")
+    .then(() => APIManager.getAllExpand("messages", "user"))
     .then(messages => {
       this.setState({
         messages: messages

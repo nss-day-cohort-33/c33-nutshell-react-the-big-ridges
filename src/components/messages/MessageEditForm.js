@@ -16,16 +16,18 @@ export default class MessageEditForm extends Component {
 
     updateExistingMessage = evt => {
       evt.preventDefault()
-       {
+
+
+      {
         const editedMessage = {
           id: this.props.match.params.messageId,
           message: this.state.message,
           timeStamp: Date.now(),
-          userId: parseInt(2)
+          userId: parseInt(sessionStorage.getItem("user"))
         };
 
-    this.props.updateMessage(editedMessage)
-    .then(() => this.props.history.push("/messages"))
+            this.props.updateMessage(editedMessage)
+            .then(() => this.props.history.push("/messages"))
     }
   }
 

@@ -7,7 +7,7 @@
       "id": 1
     },
     {
-      "name": "",
+      "name": "JOHN",
       "email": "Me@email.com",
       "password": "",
       "id": 2
@@ -34,22 +34,22 @@
   "friends": [],
   "messages": [
     {
-      "userId": 2,
-      "message": "Hi guys",
       "id": 1,
-      "timeStamp": 1562705030804
+      "message": "Hi guysEDITEDITEDITssss",
+      "timeStamp": 1563900600257,
+      "userId": 1
     },
     {
-      "userId": 1,
-      "message": "blah  blah",
       "id": 2,
-      "timeStamp": 1562705030804
+      "message": "blah  blahzzzz",
+      "timeStamp": 1563898116956,
+      "userId": 1
     },
     {
-      "userId": 2,
-      "message": "hello WORLD",
-      "timestamp": 1563840134190,
-      "id": 3
+      "id": 3,
+      "message": "hello WORLDsss",
+      "timeStamp": 1563901560206,
+      "userId": 1
     },
     {
       "userId": 2,
@@ -58,28 +58,16 @@
       "id": 4
     },
     {
-      "userId": 2,
+      "userId": 3,
       "message": "hey",
       "timestamp": 1563842108904,
       "id": 5
     },
     {
-      "userId": 2,
-      "message": "whoho",
-      "timestamp": 1563842116883,
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "message": "BBB",
-      "timestamp": 1563891193841,
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "message": "BBB",
-      "timestamp": 1563891205236,
-      "id": 8
+      "id": 6,
+      "message": "blahsss",
+      "timeStamp": 1563905801454,
+      "userId": 1
     }
   ],
   "events": [
