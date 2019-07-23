@@ -7,7 +7,7 @@
       "id": 1
     },
     {
-      "name": "",
+      "name": "JOHN",
       "email": "Me@email.com",
       "password": "",
       "id": 2
@@ -32,76 +32,93 @@
     }
   ],
   "friends": [],
-  "messages": [],
+  "messages": [
+    {
+      "id": 2,
+      "message": "things",
+      "timeStamp": 1563910676257,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "message": "blah blah blah",
+      "timeStamp": 1563910670840,
+      "userId": 1
+    },
+    {
+      "userId": 1,
+      "message": "you go girl",
+      "timeStamp": 1563910526465,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "message": "Sam",
+      "timeStamp": 1563914847891,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "message": "drew",
+      "timeStamp": 1563915159219,
+      "id": 6
+    }
+  ],
   "events": [
     {
       "userId": 1,
-      "title": "party",
-      "date": "2019-07-11",
-      "time": "21:00",
-      "location": "david's house",
+      "title": "fdsa",
+      "date": "fdsa",
+      "time": "fdsa",
+      "location": "fdsa",
       "id": 1
     },
     {
-      "userId": 2,
-      "title": "take out trask",
-      "date": "2019-07-27",
-      "time": "15:00",
-      "location": "my house",
+      "userId": 1,
+      "title": "fdsa",
+      "date": "asdf",
+      "time": "dsafa",
+      "location": "qevae",
       "id": 2
+    },
+    {
+      "userId": null,
+      "title": "sam",
+      "date": "sam",
+      "time": "sam",
+      "location": "sam",
+      "id": 3
     }
   ],
   "news": [
     {
-      "userId": 1,
+      "userId": null,
       "title": "Sam",
       "url": "Sam",
       "synopsis": "Sam",
       "id": 1
     },
     {
-      "userId": 1,
+      "userId": null,
       "title": "Drew",
       "url": "Drew",
       "synopsis": "Drew",
-      "id": 3
-    },
-    {
-      "userId": 1,
-      "title": "Berk",
-      "url": "Berk",
-      "synopsis": "Berk",
-      "id": 4
-    },
-    {
-      "id": 5,
-      "userId": null,
-      "title": "Curt3",
-      "url": "Curt3",
-      "synopsis": "Curt3"
-    }
-  ],
-  "tasks": [
-    {
-      "task": "stop talking",
-      "date": "2019-07-15",
-      "userId": 1,
-      "complete": false,
-      "id": 1
-    },
-    {
-      "task": "a new task",
-      "date": "",
-      "userId": 2,
-      "complete": true,
       "id": 2
     },
     {
-      "task": "",
-      "date": "2019-07-19",
-      "userId": 2,
-      "complete": true,
+      "userId": null,
+      "title": "Berk",
+      "url": "Berk",
+      "synopsis": "Berk",
       "id": 3
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "title": "Curt2",
+      "url": "Curt2",
+      "synopsis": "Curt2"
     }
-  ]
+  ],
+  "tasks": []
 }

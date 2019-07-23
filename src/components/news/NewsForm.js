@@ -22,7 +22,7 @@ export default class NewsForm extends Component {
         //   window.alert("Please enter title");
         // } else {
           const article = {
-            userId: parseInt(sessionStorage.getItem("user")),
+            userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.articleTitle,
             url: this.state.url,
             synopsis: this.state.synopsis

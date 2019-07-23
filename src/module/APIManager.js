@@ -12,11 +12,22 @@ export default Object.create(null, {
         }
     },
 
+    getAllExpand: {
+        value: function (resource, expandResource) {
+            return fetch(`${remoteURL}/${resource}?_expand=${expandResource}`).then(data => data.json())
+        }
+    },
+
     delete: {
         value: function (resource, id) {
+          console.log("id", id)
             return fetch(`${remoteURL}/${resource}/${id}`, {
-                method: "DELETE"
-            }).then(e => e.json())
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                  }
+            })
+            .then(e => e.json())
         }
     },
 
