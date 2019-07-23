@@ -1,8 +1,10 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import MessageList from "./messages/MessageList"
-import APIManager from "../module/APIManager"
 import MessageEditForm from "./messages/MessageEditForm"
+import APIManager from "../module/APIManager"
+import Login from "./authentication/Login"
+import Register from "./authentication/Register";
 
 export default class ApplicationViews extends Component {
 
@@ -44,19 +46,42 @@ export default class ApplicationViews extends Component {
     });
   };
 
-
+  addUser = (user) => {
+    return APIManager.post(user, "users")
+    .then(() =>
+      APIManager.getAll("users")
+    )
+    .then(users =>
+      this.setState({
+        users: users
+      })
+    )
+  }
 
 
   render() {
     return (
       <React.Fragment>
 
-        <Route
-          exact path="/" render={props => {
-            return null
-            // Remove null and return the component which will show news articles
-          }}
-        />
+          <Route
+            exact path="/" render={props => {
+              return <Login {...props} />
+             // Remove null and return the component which will show news articles
+            }}
+          />
+
+          <Route
+            exact path="/register" render={ props => {
+              return <Register  {...props}
+                                addUser={this.addUser} />
+            }} />
+
+          <Route
+            exact path="/news" render={props => {
+              return null
+             // Remove null and return the component which will show news articles
+            }}
+          />
 
           <Route
           exact path="/events" render={props => {

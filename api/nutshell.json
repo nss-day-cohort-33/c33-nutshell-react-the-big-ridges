@@ -2,27 +2,33 @@
   "users": [
     {
       "name": "Me",
-      "email": "Me",
+      "email": "Me@email.com",
       "password": "Me",
       "id": 1
     },
     {
-      "name": "Ed",
-      "email": "balh@hot.mail.com",
+      "name": "",
+      "email": "Me@email.com",
       "password": "",
       "id": 2
     },
     {
       "name": "a",
-      "email": "a",
+      "email": "a@email.com",
       "password": "a",
       "id": 3
     },
     {
       "name": "AA",
-      "email": "AA",
+      "email": "AA@email.com",
       "password": "a",
       "id": 4
+    },
+    {
+      "name": "Sam",
+      "email": "sam@email.com",
+      "password": "sam",
+      "id": 5
     }
   ],
   "friends": [],
