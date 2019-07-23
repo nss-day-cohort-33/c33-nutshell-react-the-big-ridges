@@ -27,7 +27,42 @@ class ApplicationViews extends Component {
     APIManager.getAll("events")
       .then(events => (newState.events = events))
       .then(() => this.setState(newState));
+    APIManager.getAllExpand("messages", "user").then(
+      messages => (newState.messages = messages)
+    );
+    APIManager.getAll("users")
+      .then(users => (newState.users = users))
+      .then(() => this.setState(newState));
   }
+
+  addMessage = message =>
+    APIManager.post(message, "messages")
+      .then(() => APIManager.getAllExpand("messages", "user"))
+      .then(messages => {
+        this.setState({
+          messages: messages
+        });
+      });
+
+  updateMessage = editedMessageObject => {
+    return APIManager.put(editedMessageObject, "messages")
+      .then(() => APIManager.getAllExpand("messages", "user"))
+      .then(messages => {
+        this.setState({
+          messages: messages
+        });
+      });
+  };
+
+  addUser = user => {
+    return APIManager.post(user, "users")
+      .then(() => APIManager.getAll("users"))
+      .then(users =>
+        this.setState({
+          users: users
+        })
+      );
+  };
 
   addEvent = event =>
     APIManager.post(event, "events")
@@ -57,26 +92,6 @@ class ApplicationViews extends Component {
         this.setState({ events: events });
       });
   };
-
-  state = {
-    messages: [],
-    tasks: [],
-    events: [],
-    news: [],
-    users: []
-  };
-
-  componentDidMount() {
-    const newState = {};
-    console.log(newState);
-
-    APIManager.getAllExpand("messages", "user").then(
-      messages => (newState.messages = messages)
-    );
-    APIManager.getAll("users")
-      .then(users => (newState.users = users))
-      .then(() => this.setState(newState));
-  }
 
   addMessage = message =>
     APIManager.post(message, "messages")

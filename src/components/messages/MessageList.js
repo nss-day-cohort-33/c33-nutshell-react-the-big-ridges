@@ -23,7 +23,7 @@ export default class MessageList extends Component {
         evt.preventDefault();
         {
           const message = {
-            userId: parseInt(sessionStorage.getItem("user")),
+            userId: parseInt(sessionStorage.getItem("userId")),
             message: this.state.newMessage,
             timestamp: Date.now()
           };

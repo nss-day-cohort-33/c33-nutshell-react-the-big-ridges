@@ -4,7 +4,7 @@ import APIManager from "../../module/APIManager";
 export default class EventsEditForm extends Component {
   // Set initial state
   state = {
-    // userId: "",
+    userId: "",
     eventTitle: "",
     date: "",
     time: "",
@@ -22,7 +22,7 @@ export default class EventsEditForm extends Component {
     evt.preventDefault();
      {
       const editedEvent = {
-        // userId: parseInt(this.state.userId),
+        userId: parseInt(sessionStorage.getItem("userId")),
         title: this.state.eventTitle,
         date: this.state.date,
         time: this.state.time,
@@ -39,7 +39,7 @@ export default class EventsEditForm extends Component {
   componentDidMount() {
     APIManager.get("events", this.props.match.params.eventId).then(event => {
       this.setState({
-        // userId: event.userId,
+        userId: event.userId,
         eventTitle: event.title,
         date: event.date,
         time: event.time,

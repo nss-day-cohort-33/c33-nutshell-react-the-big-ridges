@@ -23,7 +23,7 @@ export default class EventsForm extends Component {
   constructNewEvent = evt => {
     evt.preventDefault();
       const event = {
-        userId: parseInt(this.state.userId),
+        userId: parseInt(sessionStorage.getItem("userId")),
         title: this.state.eventTitle,
         date: this.state.date,
         time: this.state.time,
