@@ -1,27 +1,50 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
-import Login from "./authentication/Login"
+import MessageList from "./messages/MessageList"
+import MessageEditForm from "./messages/MessageEditForm"
 import APIManager from "../module/APIManager"
+import Login from "./authentication/Login"
 import Register from "./authentication/Register";
 
 export default class ApplicationViews extends Component {
 
   state = {
-  userId: [],
-  message: [],
-  tasks: [],
-  events: [],
-  news: [],
-  users: []
-}
-
-  componentDidMount() {
-    const newState = {
-    }
-
-    APIManager.getAll("users").then(users => newState.users = users)
-    console.log(newState)
+    messages: [],
+    tasks: [],
+    events: [],
+    news: [],
+    users: []
   }
+
+   componentDidMount() {
+    const newState = {}
+    console.log(newState)
+
+    APIManager.getAllExpand("messages", "user")
+    .then(messages => newState.messages = messages)
+    APIManager.getAll("users")
+    .then(users => newState.users = users)
+    .then(() => this.setState(newState))
+
+   }
+
+   addMessage = message => APIManager.post(message, "messages")
+   .then(() => APIManager.getAllExpand("messages", "user"))
+   .then(messages => {
+       this.setState({
+           messages: messages
+       })
+   })
+
+   updateMessage = (editedMessageObject) => {
+    return APIManager.put(editedMessageObject, "messages")
+    .then(() => APIManager.getAllExpand("messages", "user"))
+    .then(messages => {
+      this.setState({
+        messages: messages
+      })
+    });
+  };
 
   addUser = (user) => {
     return APIManager.post(user, "users")
@@ -75,11 +98,14 @@ export default class ApplicationViews extends Component {
         />
 
         <Route
-          path="/messages" render={props => {
-            return null
-            // Remove null and return the component which will show the messages
+          exact path="/messages" render={props => {
+            return <MessageList {...props} messages={this.state.messages} addMessage={this.addMessage} />
           }}
         />
+
+          <Route path="/messages/:messageId(\d+)/edit" render={props => {
+                     return <MessageEditForm {...props} messages={this.state.messages} updateMessage={this.updateMessage}/>
+                }} />
 
         <Route
           path="/tasks" render={props => {
