@@ -15,7 +15,7 @@ export default class NewsCard extends Component {
                             type="button"
                             className="btn btn-success"
                             onClick={() => {
-                                this.props.history.push(`/articles/${this.props.article.id}/edit`);
+                                this.props.history.push(`/news/${this.props.article.id}/edit`);
                             }}
                         >
                             Edit
