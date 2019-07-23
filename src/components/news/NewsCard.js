@@ -20,9 +20,12 @@ export default class NewsCard extends Component {
                         >
                             Edit
                         </button>
-                        <a href="http://localhost:5002"
+                        <button
+                            type="button"
+                            className="btn btn-success"
                             onClick={() => this.props.deleteArticle(this.props.article.id)}
-                            className="card-link">Delete</a>
+                            className="card-link">Delete
+                        </button>
                     </div>
                 </div>
             </div>

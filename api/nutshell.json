@@ -32,44 +32,7 @@
     }
   ],
   "friends": [],
-  "messages": [
-    {
-      "userId": null,
-      "message": "Hi guys",
-      "userName": "Me",
-      "id": 1
-    },
-    {
-      "userId": null,
-      "message": "blah  blah",
-      "userName": "Me",
-      "id": 2
-    },
-    {
-      "userId": null,
-      "message": "Well",
-      "userName": "Me",
-      "id": 3
-    },
-    {
-      "userId": null,
-      "message": "whats up yo!!",
-      "userName": "Me",
-      "id": 4
-    },
-    {
-      "userId": null,
-      "message": "whats up yo!!",
-      "userName": "Me",
-      "id": 5
-    },
-    {
-      "userId": null,
-      "message": "whats up yo!!",
-      "userName": "Me",
-      "id": 6
-    }
-  ],
+  "messages": [],
   "events": [
     {
       "userId": 1,
@@ -98,42 +61,19 @@
       "id": 1
     },
     {
-      "userId": 2,
-      "url": "http://www.google.com",
-      "title": "something newaaaa",
-      "synopsis": "bbbbb",
-      "timeStamp": 1562720082584,
-      "id": 2
-    },
-    {
-      "userId": 2,
-      "url": "http://www.google.com",
-      "title": "BBBBB22222",
-      "synopsis": "xcxc",
-      "timeStamp": 1562705971796,
-      "id": 3
-    },
-    {
       "userId": 3,
-      "url": "",
-      "title": "",
-      "synopsis": "",
+      "url": "kkkn",
+      "title": "khjkjh",
+      "synopsis": "hhjnj",
       "timeStamp": 1562706033138,
       "id": 4
     },
     {
-      "userId": 3,
-      "title": "cool",
-      "url": "nothing",
-      "synopsis": "lalala",
+      "userId": 1,
+      "title": "drew",
+      "url": "drew",
+      "synopsis": "drew",
       "id": 5
-    },
-    {
-      "userId": null,
-      "title": "ssss",
-      "url": "sssss",
-      "synopsis": "sssss",
-      "id": 6
     }
   ],
   "tasks": [

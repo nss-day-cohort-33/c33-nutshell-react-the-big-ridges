@@ -24,6 +24,7 @@ export default class NewsEditForm extends Component {
       } else {
         const editedArticle = {
             id: this.props.match.params.newsId,
+            userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.articleTitle,
             url: this.state.url,
             synopsis: this.state.synopsis
@@ -38,9 +39,10 @@ export default class NewsEditForm extends Component {
       return APIManager.get("news", this.props.match.params.newsId)
       .then(article => {
         this.setState({
-          title: article.articleTitle,
-          url: article.url,
-          synopsis: article.synopsis
+            userId: article.userId,
+            title: article.articleTitle,
+            url: article.url,
+            synopsis: article.synopsis
         });
       });
     }

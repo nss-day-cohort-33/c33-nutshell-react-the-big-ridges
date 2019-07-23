@@ -6,7 +6,8 @@ export default class NewsForm extends Component {
         userId: "",
         articleTitle: "",
         url: "",
-        synopsis: ""
+        synopsis: "",
+        id: ""
     };
 
     handleFieldChange = evt => {
@@ -17,11 +18,11 @@ export default class NewsForm extends Component {
 
     constructNewArticle = evt => {
         evt.preventDefault();
-        if (this.state.articleTitle === "") {
-          window.alert("Please enter title");
-        } else {
+        // if (this.state.articleTitle === "") {
+        //   window.alert("Please enter title");
+        // } else {
           const article = {
-            userId: parseInt(this.state.userId),
+            userId: parseInt(sessionStorage.getItem("user")),
             title: this.state.articleTitle,
             url: this.state.url,
             synopsis: this.state.synopsis
@@ -29,7 +30,7 @@ export default class NewsForm extends Component {
         this.props
             .addArticle(article)
             .then(() => this.props.history.push("/news"));
-        }
+        // }
     }
 
 

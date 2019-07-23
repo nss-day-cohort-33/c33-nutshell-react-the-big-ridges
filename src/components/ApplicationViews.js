@@ -2,7 +2,7 @@ import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import NewsList from "./news/NewsList";
 import NewsForm from "./news/NewsForm";
-import NewsEditForm from "./news/NewsEditForm"
+import NewsEditForm from "./news/NewsEditForm";
 import Login from "./authentication/Login";
 import APIManager from "../module/APIManager";
 import Register from "./authentication/Register"
@@ -10,7 +10,7 @@ import Register from "./authentication/Register"
 export default class ApplicationViews extends Component {
 
   state = {
-  message: [],
+  messages: [],
   tasks: [],
   events: [],
   news: [],
@@ -22,7 +22,7 @@ export default class ApplicationViews extends Component {
     }
     APIManager.getAll("users").then(users => newState.users = users)
     APIManager.getAll("news").then(news => newState.news = news)
-    console.log(newState)
+    .then(() => this.setState(newState))
   }
 
   addUser = (user) => {
@@ -39,7 +39,8 @@ export default class ApplicationViews extends Component {
 
   deleteArticle = (id) => {
     return APIManager.delete("news", id)
-    .then((news) => {
+    .then ( () => APIManager.getAll("news"))
+    .then(news => {
         this.props.history.push("/news")
         this.setState({
         news: news
@@ -50,6 +51,7 @@ export default class ApplicationViews extends Component {
 
   addArticle = (article) => {
     return APIManager.post(article, "news")
+    .then ( () => APIManager.getAll("news"))
     .then(news =>
         this.setState({
         news: news
@@ -59,6 +61,7 @@ export default class ApplicationViews extends Component {
 
   updateArticle = (editedArticle) => {
     return APIManager.put(editedArticle, "news")
+    .then ( () => APIManager.getAll("news"))
     .then(news =>
     this.setState({
         news: news
@@ -92,12 +95,12 @@ export default class ApplicationViews extends Component {
             }}
           />
           <Route
-            path="/news/new" render={ props => {
+            exact path="/news/new" render={ props => {
                     return <NewsForm  {...props}
                                         addArticle={this.addArticle} />
             }} />
           <Route
-            path="/news/:newsId(\d+)/edit" render={ props => {
+            exact path="/news/:newsId(\d+)/edit" render={ props => {
                     return <NewsEditForm
                                     {...props}
                                     updateArticle={this.updateArticle} />
