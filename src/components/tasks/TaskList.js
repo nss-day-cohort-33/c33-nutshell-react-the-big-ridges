@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import TasksCard from "./TasksCard";
+import TaskCard from "./TaskCard";
 
-export default class TasksList extends Component {
+export default class TaskList extends Component {
   render() {
     return (
       <React.Fragment>
@@ -17,9 +17,14 @@ export default class TasksList extends Component {
           </button>
         </div>
         <section className="tasks">
-          {this.props.tasks.map(task => (
-            <TasksCard key={task.id} task={task} {...this.props} />
-          ))}
+          {this.props.tasks
+            .filter(
+              task =>
+                Number(task.userId) === Number(sessionStorage.getItem("userId"))
+            )
+            .map(task => (
+              <TaskCard key={task.id} task={task} {...this.props} />
+            ))}
         </section>
       </React.Fragment>
     );

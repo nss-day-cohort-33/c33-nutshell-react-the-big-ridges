@@ -28,12 +28,6 @@
   "friends": [],
   "messages": [
     {
-      "id": 1,
-      "message": "shit",
-      "timeStamp": 1563980734746,
-      "userId": 1
-    },
-    {
       "userId": 2,
       "message": "blah  blah",
       "userName": "Me",
@@ -101,12 +95,11 @@
   ],
   "news": [
     {
+      "id": 1,
       "userId": 1,
+      "title": "Dangerone",
       "url": "whatever",
-      "title": "Danger",
-      "synopsis": "gravel road on Balsam Mountain",
-      "timeStamp": 1562705030804,
-      "id": 1
+      "synopsis": "gravel road on Balsam Mountain"
     },
     {
       "userId": 2,
@@ -142,25 +135,39 @@
   ],
   "tasks": [
     {
-      "task": "a new task",
+      "task": "five",
       "date": "",
-      "userId": 2,
-      "complete": true,
-      "id": 2
-    },
-    {
-      "task": "",
-      "date": "2019-07-19",
-      "userId": 2,
-      "complete": true,
-      "id": 3
-    },
-    {
-      "task": "do the thing",
-      "date": "2019-07-03",
-      "complete": "",
+      "complete": false,
       "userId": 1,
-      "id": 4
+      "id": 6
+    },
+    {
+      "task": "oneTwo",
+      "date": "",
+      "complete": false,
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "task": "twoTwo",
+      "date": "",
+      "complete": false,
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "task": "seven",
+      "date": "",
+      "complete": false,
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "task": "eight",
+      "date": "",
+      "complete": false,
+      "userId": 1,
+      "id": 10
     }
   ]
 }

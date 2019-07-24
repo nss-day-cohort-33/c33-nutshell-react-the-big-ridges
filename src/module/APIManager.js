@@ -19,6 +19,11 @@ export default Object.create(null, {
       );
     }
   },
+  getSorted: {
+    value: function(resource, userId) {
+      return fetch(`${remoteURL}/${resource}?userId=${userId}`).then(data => data.json())
+    }
+  },
 
   delete: {
     value: function(resource, id) {
@@ -52,6 +57,18 @@ export default Object.create(null, {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(editedObject)
+      }).then(data => data.json());
+    }
+  },
+
+  patch: {
+    value: function(patchedObject, resource) {
+      return fetch(`${remoteURL}/${resource}/${patchedObject.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(patchedObject)
       }).then(data => data.json());
     }
   }

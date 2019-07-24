@@ -1,7 +1,7 @@
 // import { Route, Redirect } from "react-router-dom";
 import { Route } from "react-router-dom";
 import React, { Component } from "react";
-import TasksList from "./tasks/TasksList";
+import TaskList from "./tasks/TaskList";
 import { withRouter } from "react-router";
 import APIManager from "../module/APIManager";
 import EventsList from "./events/EventsList";
@@ -14,8 +14,8 @@ import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register";
-import EditTask from "./tasks/EditTask";
-import AddTask from "./tasks/AddTask"
+import TaskEditForm from "./tasks/TaskEditForm";
+import TaskForm from "./tasks/TaskForm";
 
 class ApplicationViews extends Component {
   state = {
@@ -168,6 +168,7 @@ class ApplicationViews extends Component {
   addTask = task => {
     return APIManager.post(task, "tasks")
       .then(() => APIManager.getAll("tasks"))
+
       .then(tasks =>
         this.setState({
           tasks: tasks
@@ -178,6 +179,18 @@ class ApplicationViews extends Component {
   updateTask = changedTask => {
     return APIManager.put(changedTask, "tasks")
       .then(() => APIManager.getAll("tasks"))
+
+      .then(tasks =>
+        this.setState({
+          tasks: tasks
+        })
+      );
+  };
+
+  patchTask = patchedTask => {
+    return APIManager.patch(patchedTask, "tasks")
+      .then(() => APIManager.getAll("tasks"))
+
       .then(tasks =>
         this.setState({
           tasks: tasks
@@ -280,7 +293,7 @@ class ApplicationViews extends Component {
           path="/tasks"
           render={props => {
             return (
-              <TasksList
+              <TaskList
                 {...props}
                 tasks={this.state.tasks}
                 deleteTask={this.deleteTask}
@@ -293,7 +306,7 @@ class ApplicationViews extends Component {
           path="/tasks/new"
           render={props => {
             return (
-              <AddTask
+              <TaskForm
                 {...props}
                 tasks={this.state.tasks}
                 addTask={this.addTask}
@@ -305,7 +318,7 @@ class ApplicationViews extends Component {
           path="/tasks/:taskId(\d+)/edit"
           render={props => {
             return (
-              <EditTask
+              <TaskEditForm
                 {...props}
                 tasks={this.state.tasks}
                 updateTask={this.updateTask}

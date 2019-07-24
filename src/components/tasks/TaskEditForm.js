@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import Checkbox from "../../../node_modules/react/";
+import APIManager from "../../module/APIManager";
 
-export default class EditTask extends Component {
+export default class TaskEditForm extends Component {
   state = {
-    task: this.props.task,
-    date: this.props.date,
-    complete: this.props.complete
+    userId: "",
+    task: "",
+    date: "",
+    complete: false
   };
 
   handleFieldChange = evt => {
@@ -14,17 +15,36 @@ export default class EditTask extends Component {
     this.setState(stateToChange);
   };
 
-  editTask = evt => {
+  updateExistingtask = evt => {
     evt.preventDefault();
 
-    let changedTask = {
+    const editedTask = {
+      id: this.props.match.params.taskId,
+      userId: parseInt(sessionStorage.getItem("userId")),
       task: this.state.task,
       date: this.state.date,
       complete: this.state.complete
     };
 
-    this.props.putTask(changedTask).then(() => this.props.history.push("/tasks"));
+    this.props
+      .updateTask(editedTask)
+      .then(() => this.props.history.push("/tasks"));
   };
+
+  componentDidMount() {
+    return APIManager.get("tasks", this.props.match.params.taskId).then(
+      task => {
+        this.setState({
+          userId: task.userId,
+          task: task.task,
+          date: task.date,
+          complete: task.complete
+        });
+      }
+    );
+  }
+
+
   render() {
     return (
       <React.Fragment>
@@ -39,6 +59,7 @@ export default class EditTask extends Component {
               onChange={this.handleFieldChange}
               id="task"
               placeholder="ex. Rake the Leaves"
+              value={this.state.task}
             />
           </div>
           <div className="form-group">
@@ -49,12 +70,13 @@ export default class EditTask extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="date"
+              value={this.state.date}
             />
           </div>
 
           <button
             type="submit"
-            onClick={this.editTask}
+            onClick={this.updateExistingtask}
             className="btn btn-primary"
           >
             Submit

@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import Checkbox from "../../../node_modules/react/";
 
-export default class AddTask extends Component {
+export default class TaskForm extends Component {
   state = {
     task: "",
     date: "",
-    complete: "",
     id: "",
     userId: ""
   };
@@ -22,7 +20,7 @@ export default class AddTask extends Component {
     let newTask = {
       task: this.state.task,
       date: this.state.date,
-      complete: this.state.complete,
+      complete: false,
       userId: Number(sessionStorage.getItem("userId"))
     };
 
