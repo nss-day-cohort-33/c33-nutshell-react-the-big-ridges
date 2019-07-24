@@ -107,7 +107,7 @@
       "id": 1,
       "userId": 1,
       "title": "Sam",
-      "url": "Sam",
+      "url": "http://www.mothedev.com",
       "synopsis": "Sam",
       "timeStamp": 1563997126068
     },
@@ -115,7 +115,7 @@
       "id": 2,
       "userId": 1,
       "title": "Drew",
-      "url": "Drew",
+      "url": "http://www.mothedev.com",
       "synopsis": "Drew",
       "timeStamp": 1563997155865
     },
@@ -123,7 +123,7 @@
       "id": 3,
       "userId": 1,
       "title": "Berk",
-      "url": "Berk",
+      "url": "http://www.mothedev.com",
       "synopsis": "Berk",
       "timeStamp": 1563997157579
     },
@@ -138,7 +138,7 @@
     {
       "userId": 1,
       "title": "Joe",
-      "url": "Joe",
+      "url": "http://www.mothedev.com",
       "synopsis": "Joe",
       "timeStamp": 1563997022096,
       "id": 5
@@ -146,7 +146,7 @@
     {
       "userId": 1,
       "title": "Mo",
-      "url": "Mo",
+      "url": "http://www.mothedev.com",
       "synopsis": "Mo",
       "timeStamp": 1563997640404,
       "id": 6
@@ -154,7 +154,7 @@
     {
       "userId": 5,
       "title": "ssaaaaam",
-      "url": "samaamamam",
+      "url": "http://www.mothedev.com",
       "synopsis": "samamamama",
       "timeStamp": 1563999557131,
       "id": 7

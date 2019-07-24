@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
-import { Redirect } from 'react-router'
+// import { Link } from "react-router-dom"
+// import { Redirect } from 'react-router'
 import "./News.css"
 
 export default class NewsCard extends Component {
@@ -10,7 +10,7 @@ export default class NewsCard extends Component {
                 <div className="card-body">
                     <div className="card-title">
                         <h5>{this.props.article.title}</h5>
-                        <Link className="nav-link" to={this.props.article.url}>Article Link</Link>
+                        {/* <Link className="nav-link" to={this.props.article.url}>Article Link</Link> */}
                         <a target="_blank" href={this.props.article.url}>Article Link</a>
                         <p>{this.props.article.synopsis}</p>
                         <button
