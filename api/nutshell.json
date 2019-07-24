@@ -29,6 +29,12 @@
       "email": "sam@email.com",
       "password": "sam",
       "id": 5
+    },
+    {
+      "name": "thing",
+      "email": "thing@thing.com",
+      "password": "thing",
+      "id": 6
     }
   ],
   "friends": [],
@@ -58,10 +64,22 @@
       "id": 5
     },
     {
+      "id": 6,
+      "message": "drewman",
+      "timeStamp": 1563985750852,
+      "userId": 1
+    },
+    {
+      "id": 7,
+      "message": "hola",
+      "timeStamp": 1563979354182,
+      "userId": 6
+    },
+    {
       "userId": 1,
-      "message": "drew",
-      "timeStamp": 1563915159219,
-      "id": 6
+      "message": "you go girl",
+      "timeStamp": 1563985756789,
+      "id": 8
     }
   ],
   "events": [
@@ -80,44 +98,15 @@
       "time": "dsafa",
       "location": "qevae",
       "id": 2
-    },
-    {
-      "userId": null,
-      "title": "sam",
-      "date": "sam",
-      "time": "sam",
-      "location": "sam",
-      "id": 3
     }
   ],
   "news": [
     {
-      "userId": null,
-      "title": "Sam",
-      "url": "Sam",
-      "synopsis": "Sam",
-      "id": 1
-    },
-    {
-      "userId": null,
-      "title": "Drew",
-      "url": "Drew",
-      "synopsis": "Drew",
-      "id": 2
-    },
-    {
-      "userId": null,
-      "title": "Berk",
-      "url": "Berk",
-      "synopsis": "Berk",
-      "id": 3
-    },
-    {
-      "id": 4,
       "userId": 1,
-      "title": "Curt2",
-      "url": "Curt2",
-      "synopsis": "Curt2"
+      "title": "ab",
+      "url": "cd",
+      "synopsis": "ef",
+      "id": 5
     }
   ],
   "tasks": []

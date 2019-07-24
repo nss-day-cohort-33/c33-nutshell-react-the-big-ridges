@@ -1,4 +1,4 @@
-/* .events {
+.events {
     display: flex;
     justify-content: space-evenly;
 }
@@ -19,12 +19,12 @@
     font-size: 0.7em;
 }
 
-/* .ownerList {
+.ownerList {
     font-size: 0.75em;
-} */
+}
 
-/* .createEventButton {
+.createEventButton {
     display: flex;
     justify-content: space-evenly;
     margin: 0 0 10px 0;
-  }  */
+  }
