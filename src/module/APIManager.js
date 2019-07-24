@@ -12,6 +12,12 @@ export default Object.create(null, {
         }
     },
 
+    getAllMessages: {
+        value: function (resource) {
+            return fetch(`${remoteURL}/${resource}?_sort=timeStamp`).then(data => data.json())
+        }
+    },
+
     getAllExpand: {
         value: function (resource, expandResource) {
             return fetch(`${remoteURL}/${resource}?_expand=${expandResource}`).then(data => data.json())

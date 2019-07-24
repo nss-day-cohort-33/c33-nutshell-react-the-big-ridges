@@ -17,7 +17,9 @@ export default class NewsList extends Component {
             </div>
             <section className="news">
             {
-                this.props.news.map(article =>
+                this.props.news
+                .filter(article => parseInt(article.userId) === parseInt(sessionStorage.getItem("userId")))
+                .map(article =>
                     <NewsCard key={article.id} article={article} {...this.props} />)
             }
             </section>

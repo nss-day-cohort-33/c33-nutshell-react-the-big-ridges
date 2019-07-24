@@ -1,5 +1,5 @@
 // import { Route, Redirect } from "react-router-dom";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import APIManager from "../module/APIManager";
@@ -15,6 +15,9 @@ import Login from "./authentication/Login";
 import Register from "./authentication/Register";
 
 class ApplicationViews extends Component {
+
+  isAuthenticated = () => sessionStorage.getItem("userId") !== null
+
   state = {
     events: [],
     news: [],
@@ -26,6 +29,7 @@ class ApplicationViews extends Component {
 
   componentDidMount() {
     const newState = {};
+    // const id = parsInt(sessionStorage.getItem("usertId"))
 
     APIManager.getAll("events")
       .then(events => (newState.events = events))
@@ -36,7 +40,7 @@ class ApplicationViews extends Component {
     APIManager.getAll("users")
       .then(users => (newState.users = users))
       .then(() => this.setState(newState));
-    APIManager.getAll("news").then(news => newState.news = news)
+    APIManager.getAllMessages("news").then(news => newState.news = news)
       .then(() => this.setState(newState));
   }
 
@@ -170,11 +174,15 @@ class ApplicationViews extends Component {
         />
 {/* Start news routes */}
           <Route
-            exact path="/news" render={ props => {
+          exact path="/news" render={ props => {
+            if (this.isAuthenticated()) {
               return <NewsList  {...props}
-                                deleteArticle={this.deleteArticle}
-                                news={this.state.news} />
-            }}
+              deleteArticle={this.deleteArticle}
+              news={this.state.news} />
+           } else {
+             return <Redirect to="/" />
+           }
+        }}
           />
           <Route
             exact path="/news/new" render={ props => {
@@ -188,25 +196,20 @@ class ApplicationViews extends Component {
                                     updateArticle={this.updateArticle} />
                 }}/>
 {/* End news routes */}
-          <Route
-          exact path="/events" render={props => {
-            return null
-            // Remove null and return the component which will show news articles
-          }}
-        />
-
         <Route
           exact
           path="/events"
           render={props => {
-            return (
-              <EventsList
+            if (this.isAuthenticated()) {
+            return <EventsList
                 {...props}
                 deleteEvent={this.deleteEvent}
                 events={this.state.events}
               />
-            );
-          }}
+            } else {
+                return <Redirect to="/" />
+              }
+           }}
         />
         <Route
           path="/events/new"
@@ -238,15 +241,17 @@ class ApplicationViews extends Component {
           exact
           path="/messages"
           render={props => {
-            return (
-              <MessageList
+            if (this.isAuthenticated()) {
+            return <MessageList
                 {...props}
                 messages={this.state.messages}
                 addMessage={this.addMessage}
               />
-            );
-          }}
-        />
+            } else {
+            return <Redirect to="/" />
+          }
+       }}
+    />
 
         <Route
           path="/messages/:messageId(\d+)/edit"
@@ -262,18 +267,26 @@ class ApplicationViews extends Component {
         />
 
         <Route
-          path="/messages"
+          exact path="/tasks"
           render={props => {
+            if (this.isAuthenticated()) {
             return null;
-          }}
-        />
+          }else {
+            return <Redirect to="/" />
+          }
+       }}
+      />
 
         <Route
-          path="/tasks"
+          exact path="/friends"
           render={props => {
+            if (this.isAuthenticated()) {
             return null;
-          }}
-        />
+          }else {
+            return <Redirect to="/" />
+          }
+       }}
+      />
       </React.Fragment>
     );
   }
