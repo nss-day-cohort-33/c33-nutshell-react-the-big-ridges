@@ -8,6 +8,9 @@ import EventsForm from "./events/EventsForm";
 import EventsEditForm from "./events/EventsEditForm";
 import MessageList from "./messages/MessageList";
 import MessageEditForm from "./messages/MessageEditForm";
+import NewsList from "./news/NewsList";
+import NewsForm from "./news/NewsForm";
+import NewsEditForm from "./news/NewsEditForm";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register";
 
@@ -32,6 +35,8 @@ class ApplicationViews extends Component {
     );
     APIManager.getAll("users")
       .then(users => (newState.users = users))
+      .then(() => this.setState(newState));
+    APIManager.getAll("news").then(news => newState.news = news)
       .then(() => this.setState(newState));
   }
 
@@ -112,15 +117,37 @@ class ApplicationViews extends Component {
       });
   };
 
-  addUser = user => {
-    return APIManager.post(user, "users")
-      .then(() => APIManager.getAll("users"))
-      .then(users =>
+  deleteArticle = (id) => {
+    return APIManager.delete("news", id)
+    .then ( () => APIManager.getAll("news"))
+    .then(news => {
+        // this.props.history.push("/news")
         this.setState({
-          users: users
-        })
-      );
-  };
+        news: news
+      })
+    }
+  )
+}
+
+  addArticle = (article) => {
+    return APIManager.post(article, "news")
+    .then ( () => APIManager.getAll("news"))
+    .then(news =>
+        this.setState({
+        news: news
+      })
+    )
+  }
+
+  updateArticle = (editedArticle) => {
+    return APIManager.put(editedArticle, "news")
+    .then ( () => APIManager.getAll("news"))
+    .then(news =>
+    this.setState({
+        news: news
+    })
+  )
+}
 
   render() {
     return (
@@ -141,12 +168,29 @@ class ApplicationViews extends Component {
             return <Register {...props} addUser={this.addUser} />;
           }}
         />
-
-        <Route
-          exact
-          path="/news"
-          render={props => {
-            return null;
+{/* Start news routes */}
+          <Route
+            exact path="/news" render={ props => {
+              return <NewsList  {...props}
+                                deleteArticle={this.deleteArticle}
+                                news={this.state.news} />
+            }}
+          />
+          <Route
+            exact path="/news/new" render={ props => {
+                    return <NewsForm  {...props}
+                                        addArticle={this.addArticle} />
+            }} />
+          <Route
+            exact path="/news/:newsId(\d+)/edit" render={ props => {
+                    return <NewsEditForm
+                                    {...props}
+                                    updateArticle={this.updateArticle} />
+                }}/>
+{/* End news routes */}
+          <Route
+          exact path="/events" render={props => {
+            return null
             // Remove null and return the component which will show news articles
           }}
         />
