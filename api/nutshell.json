@@ -1,142 +1,166 @@
 {
-    "users": [
-      {
-        "name": "Me",
-        "email": "Me",
-        "password": "Me",
-        "id": 1
-      },
-      {
-        "name": "",
-        "email": "",
-        "password": "",
-        "id": 2
-      },
-      {
-        "name": "a",
-        "email": "a",
-        "password": "a",
-        "id": 3
-      },
-      {
-        "name": "AA",
-        "email": "AA",
-        "password": "a",
-        "id": 4
-      }
-    ],
-    "friends": [],
-    "messages": [
-      {
-        "userId": null,
-        "message": "Hi guys",
-        "userName": "Me",
-        "id": 1
-      },
-      {
-        "userId": null,
-        "message": "blah  blah",
-        "userName": "Me",
-        "id": 2
-      },
-      {
-        "userId": null,
-        "message": "Well",
-        "userName": "Me",
-        "id": 3
-      },
-      {
-        "userId": null,
-        "message": "whats up yo!!",
-        "userName": "Me",
-        "id": 4
-      },
-      {
-        "userId": null,
-        "message": "whats up yo!!",
-        "userName": "Me",
-        "id": 5
-      },
-      {
-        "userId": null,
-        "message": "whats up yo!!",
-        "userName": "Me",
-        "id": 6
-      }
-    ],
-    "events": [
-      {
-        "userId": 1,
-        "title": "party",
-        "date": "2019-07-11",
-        "time": "21:00",
-        "location": "david's house",
-        "id": 1
-      },
-      {
-        "userId": 2,
-        "title": "take out trask",
-        "date": "2019-07-27",
-        "time": "15:00",
-        "location": "my house",
-        "id": 2
-      }
-    ],
-    "news": [
-      {
-        "userId": 1,
-        "url": "whatever",
-        "title": "Danger",
-        "synopsis": "gravel road on Balsam Mountain",
-        "timeStamp": 1562705030804,
-        "id": 1
-      },
-      {
-        "userId": 2,
-        "url": "http://www.google.com",
-        "title": "something newaaaa",
-        "synopsis": "bbbbb",
-        "timeStamp": 1562720082584,
-        "id": 2
-      },
-      {
-        "userId": 2,
-        "url": "http://www.google.com",
-        "title": "BBBBB22222",
-        "synopsis": "xcxc",
-        "timeStamp": 1562705971796,
-        "id": 3
-      },
-      {
-        "userId": 3,
-        "url": "",
-        "title": "",
-        "synopsis": "",
-        "timeStamp": 1562706033138,
-        "id": 4
-      }
-    ],
-    "tasks": [
-      {
-        "task": "stop talking",
-        "date": "2019-07-15",
-        "userId": 1,
-        "complete": false,
-        "id": 1
-      },
-      {
-        "task": "a new task",
-        "date": "",
-        "userId": 2,
-        "complete": true,
-        "id": 2
-      },
-      {
-        "task": "",
-        "date": "2019-07-19",
-        "userId": 2,
-        "complete": true,
-        "id": 3
-      }
-    ]
-   }
+  "users": [
+    {
+      "name": "Me",
+      "email": "Me@me",
+      "password": "Me",
+      "id": 1
+    },
+    {
+      "name": "you",
+      "email": "you@you",
+      "password": "you",
+      "id": 2
+    },
+    {
+      "name": "a",
+      "email": "a@a",
+      "password": "a",
+      "id": 3
+    },
+    {
+      "name": "AA",
+      "email": "AA@b",
+      "password": "a",
+      "id": 4
+    }
+  ],
+  "friends": [],
+  "messages": [
+    {
+      "id": 1,
+      "message": "shit",
+      "timeStamp": 1563980734746,
+      "userId": 1
+    },
+    {
+      "userId": 2,
+      "message": "blah  blah",
+      "userName": "Me",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "message": "Well",
+      "userName": "Me",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "message": "whats up yo!!",
+      "userName": "Me",
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "message": "whats up yo!!",
+      "userName": "Me",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "message": "whats up yo!!",
+      "userName": "Me",
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "timeStamp": 1563980477637,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "message": "hello",
+      "timeStamp": 1563980545068,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "message": "hello",
+      "timeStamp": 1563980711197,
+      "id": 9
+    }
+  ],
+  "events": [
+    {
+      "userId": 2,
+      "title": "take out trask",
+      "date": "2019-07-27",
+      "time": "15:00",
+      "location": "my house",
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "title": "that",
+      "date": "that",
+      "time": "that",
+      "location": "that",
+      "id": 3
+    }
+  ],
+  "news": [
+    {
+      "userId": 1,
+      "url": "whatever",
+      "title": "Danger",
+      "synopsis": "gravel road on Balsam Mountain",
+      "timeStamp": 1562705030804,
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "url": "http://www.google.com",
+      "title": "something newaaaa",
+      "synopsis": "bbbbb",
+      "timeStamp": 1562720082584,
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "url": "http://www.google.com",
+      "title": "BBBBB22222",
+      "synopsis": "xcxc",
+      "timeStamp": 1562705971796,
+      "id": 3
+    },
+    {
+      "userId": 3,
+      "url": "",
+      "title": "",
+      "synopsis": "",
+      "timeStamp": 1562706033138,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "this",
+      "url": "this",
+      "synopsis": "this",
+      "id": 5
+    }
+  ],
+  "tasks": [
+    {
+      "task": "a new task",
+      "date": "",
+      "userId": 2,
+      "complete": true,
+      "id": 2
+    },
+    {
+      "task": "",
+      "date": "2019-07-19",
+      "userId": 2,
+      "complete": true,
+      "id": 3
+    },
+    {
+      "task": "do the thing",
+      "date": "2019-07-03",
+      "complete": "",
+      "userId": 1,
+      "id": 4
+    }
+  ]
+}

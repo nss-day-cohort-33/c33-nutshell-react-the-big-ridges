@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import Checkbox from "../../../node_modules/react/";
 
-export default class EditTask extends Component {
+export default class AddTask extends Component {
   state = {
-    task: this.props.task,
-    date: this.props.date,
-    complete: this.props.complete
+    task: "",
+    date: "",
+    complete: "",
+    id: "",
+    userId: ""
   };
 
   handleFieldChange = evt => {
@@ -14,16 +16,17 @@ export default class EditTask extends Component {
     this.setState(stateToChange);
   };
 
-  editTask = evt => {
+  constructNewTask = evt => {
     evt.preventDefault();
 
-    let changedTask = {
+    let newTask = {
       task: this.state.task,
       date: this.state.date,
-      complete: this.state.complete
+      complete: this.state.complete,
+      userId: Number(sessionStorage.getItem("userId"))
     };
 
-    this.props.putTask(changedTask).then(() => this.props.history.push("/tasks"));
+    this.props.addTask(newTask).then(() => this.props.history.push("/tasks"));
   };
   render() {
     return (
@@ -54,7 +57,7 @@ export default class EditTask extends Component {
 
           <button
             type="submit"
-            onClick={this.editTask}
+            onClick={this.constructNewTask}
             className="btn btn-primary"
           >
             Submit
