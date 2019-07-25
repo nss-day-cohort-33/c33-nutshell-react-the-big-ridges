@@ -24,6 +24,12 @@ class NavBar extends Component {
                         <Link className="nav-link" to="/events">Events</Link>
                     </li>
                 </ul>
+                <Link className="btn btn-primary btn-sm" onClick={() => sessionStorage.clear()} to="/">Logout</Link>
+                {/* <button type="button" className="btn btn-primary btn-sm p-2"
+                        onClick={() => this.props.history.push("/")}
+                        >
+                        Log out
+                </button> */}
             </nav>
         )
     }

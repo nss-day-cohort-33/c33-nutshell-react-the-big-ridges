@@ -9,7 +9,7 @@
     {
       "name": "JOHN",
       "email": "Me@email.com",
-      "password": "",
+      "password": "sam",
       "id": 2
     },
     {
@@ -29,6 +29,18 @@
       "email": "sam@email.com",
       "password": "sam",
       "id": 5
+    },
+    {
+      "name": "Curt",
+      "email": "curt@email.com",
+      "password": "curt",
+      "id": 6
+    },
+    {
+      "name": "Karla",
+      "email": "Karla@email.com",
+      "password": "Karla",
+      "id": 7
     }
   ],
   "friends": [],
@@ -92,32 +104,60 @@
   ],
   "news": [
     {
-      "userId": null,
+      "id": 1,
+      "userId": 1,
       "title": "Sam",
-      "url": "Sam",
+      "url": "http://www.mothedev.com",
       "synopsis": "Sam",
-      "id": 1
+      "timeStamp": 1563997126068
     },
     {
-      "userId": null,
+      "id": 2,
+      "userId": 1,
       "title": "Drew",
-      "url": "Drew",
+      "url": "http://www.mothedev.com",
       "synopsis": "Drew",
-      "id": 2
+      "timeStamp": 1563997155865
     },
     {
-      "userId": null,
+      "id": 3,
+      "userId": 1,
       "title": "Berk",
-      "url": "Berk",
+      "url": "http://www.mothedev.com",
       "synopsis": "Berk",
-      "id": 3
+      "timeStamp": 1563997157579
     },
     {
       "id": 4,
       "userId": 1,
       "title": "Curt2",
-      "url": "Curt2",
-      "synopsis": "Curt2"
+      "url": "https://www.facebook.com/",
+      "synopsis": "Curt2",
+      "timeStamp": 1563997683766
+    },
+    {
+      "userId": 1,
+      "title": "Joe",
+      "url": "http://www.mothedev.com",
+      "synopsis": "Joe",
+      "timeStamp": 1563997022096,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "Mo",
+      "url": "http://www.mothedev.com",
+      "synopsis": "Mo",
+      "timeStamp": 1563997640404,
+      "id": 6
+    },
+    {
+      "userId": 5,
+      "title": "ssaaaaam",
+      "url": "http://www.mothedev.com",
+      "synopsis": "samamamama",
+      "timeStamp": 1563999557131,
+      "id": 7
     }
   ],
   "tasks": []

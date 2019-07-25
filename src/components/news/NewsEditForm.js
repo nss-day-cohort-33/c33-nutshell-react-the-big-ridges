@@ -27,7 +27,8 @@ export default class NewsEditForm extends Component {
             userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.title,
             url: this.state.url,
-            synopsis: this.state.synopsis
+            synopsis: this.state.synopsis,
+            timeStamp: Date.now()
         };
 
     this.props.updateArticle(editedArticle)
