@@ -22,13 +22,14 @@ export default class NewsEditForm extends Component {
     //   if (!this.state.newsId) {
     //     window.alert("Please fix this Sam");
     //   } else {
-    const editedArticle = {
-      id: this.props.match.params.newsId,
-      userId: parseInt(sessionStorage.getItem("userId")),
-      title: this.state.title,
-      url: this.state.url,
-      synopsis: this.state.synopsis
-    };
+        const editedArticle = {
+            id: this.props.match.params.newsId,
+            userId: parseInt(sessionStorage.getItem("userId")),
+            title: this.state.title,
+            url: this.state.url,
+            synopsis: this.state.synopsis,
+            timeStamp: Date.now()
+        };
 
     this.props
       .updateArticle(editedArticle)

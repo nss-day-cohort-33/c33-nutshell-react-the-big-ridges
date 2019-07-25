@@ -1,5 +1,5 @@
 // import { Route, Redirect } from "react-router-dom";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import TaskList from "./tasks/TaskList";
 import { withRouter } from "react-router";
@@ -18,6 +18,9 @@ import TaskEditForm from "./tasks/TaskEditForm";
 import TaskForm from "./tasks/TaskForm";
 
 class ApplicationViews extends Component {
+
+  isAuthenticated = () => sessionStorage.getItem("userId") !== null
+
   state = {
     events: [],
     news: [],
@@ -29,6 +32,7 @@ class ApplicationViews extends Component {
 
   componentDidMount() {
     const newState = {};
+    // const id = parsInt(sessionStorage.getItem("usertId"))
 
     APIManager.getAll("events")
       .then(events => (newState.events = events))
@@ -44,6 +48,7 @@ class ApplicationViews extends Component {
       .then(() => this.setState(newState));
     APIManager.getAll("tasks")
       .then(tasks => (newState.tasks = tasks))
+    APIManager.getAllMessages("news").then(news => newState.news = news)
       .then(() => this.setState(newState));
   }
 
@@ -217,6 +222,7 @@ class ApplicationViews extends Component {
             return <Register {...props} addUser={this.addUser} />;
           }}
         />
+<<<<<<< HEAD
         {/* Start news routes */}
         <Route
           exact
@@ -249,18 +255,46 @@ class ApplicationViews extends Component {
         />
         {/* End news routes */}
 
+=======
+{/* Start news routes */}
+          <Route
+          exact path="/news" render={ props => {
+            if (this.isAuthenticated()) {
+              return <NewsList  {...props}
+              deleteArticle={this.deleteArticle}
+              news={this.state.news} />
+           } else {
+             return <Redirect to="/" />
+           }
+        }}
+          />
+          <Route
+            exact path="/news/new" render={ props => {
+                    return <NewsForm  {...props}
+                                        addArticle={this.addArticle} />
+            }} />
+          <Route
+            exact path="/news/:newsId(\d+)/edit" render={ props => {
+                    return <NewsEditForm
+                                    {...props}
+                                    updateArticle={this.updateArticle} />
+                }}/>
+{/* End news routes */}
+>>>>>>> master
         <Route
           exact
           path="/events"
           render={props => {
-            return (
-              <EventsList
+            if (this.isAuthenticated()) {
+            return <EventsList
                 {...props}
                 deleteEvent={this.deleteEvent}
                 events={this.state.events}
               />
-            );
-          }}
+            } else {
+                return <Redirect to="/" />
+              }
+           }}
         />
         <Route
           path="/events/new"
@@ -292,15 +326,29 @@ class ApplicationViews extends Component {
           exact
           path="/tasks"
           render={props => {
+<<<<<<< HEAD
             return (
               <TaskList
+=======
+            if (this.isAuthenticated()) {
+            return <MessageList
+>>>>>>> master
                 {...props}
                 tasks={this.state.tasks}
                 deleteTask={this.deleteTask}
               />
+<<<<<<< HEAD
             );
           }}
         />
+=======
+            } else {
+            return <Redirect to="/" />
+          }
+       }}
+    />
+
+>>>>>>> master
         <Route
           exact
           path="/tasks/new"
@@ -328,8 +376,9 @@ class ApplicationViews extends Component {
         />
 
         <Route
-          path="/messages"
+          exact path="/tasks"
           render={props => {
+<<<<<<< HEAD
             return (
               <MessageList
                 {...props}
@@ -352,6 +401,26 @@ class ApplicationViews extends Component {
             );
           }}
         />
+=======
+            if (this.isAuthenticated()) {
+            return null;
+          }else {
+            return <Redirect to="/" />
+          }
+       }}
+      />
+
+        <Route
+          exact path="/friends"
+          render={props => {
+            if (this.isAuthenticated()) {
+            return null;
+          }else {
+            return <Redirect to="/" />
+          }
+       }}
+      />
+>>>>>>> master
       </React.Fragment>
     );
   }

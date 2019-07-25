@@ -24,6 +24,17 @@ export default Object.create(null, {
       return fetch(`${remoteURL}/${resource}?userId=${userId}`).then(data => data.json())
     }
   },
+    getAllMessages: {
+        value: function (resource) {
+            return fetch(`${remoteURL}/${resource}?_sort=timeStamp`).then(data => data.json())
+        }
+    },
+
+    getAllExpand: {
+        value: function (resource, expandResource) {
+            return fetch(`${remoteURL}/${resource}?_expand=${expandResource}`).then(data => data.json())
+        }
+    },
 
   delete: {
     value: function(resource, id) {

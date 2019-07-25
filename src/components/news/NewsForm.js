@@ -25,7 +25,8 @@ export default class NewsForm extends Component {
             userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.articleTitle,
             url: this.state.url,
-            synopsis: this.state.synopsis
+            synopsis: this.state.synopsis,
+            timeStamp: Date.now()
           }
         this.props
             .addArticle(article)
