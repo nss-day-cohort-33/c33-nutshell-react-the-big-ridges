@@ -26,7 +26,6 @@ class ApplicationViews extends Component {
 
   componentDidMount() {
     const newState = {};
-
     APIManager.getAll("events")
       .then(events => (newState.events = events))
       .then(() => this.setState(newState));

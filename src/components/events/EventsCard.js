@@ -3,37 +3,38 @@ import "./events.css";
 // import APIManager from "../../module/APIManager";
 
 export default class EventsCard extends Component {
-  editButton = (
-    <button
-      type="button"
-      className="btn-success"
-      onClick={() => {
-        this.props.history.push(`/events/${this.props.event.id}/edit`);
-      }}
-    >
-      Edit
-    </button>
-  );
-
-  deleteButton = (
-    <button
-      onClick={() => this.props.deleteEvent(this.props.event.id)}
-      className="card-link"
-    >
-      Delete
-    </button>
-  );
 
   render() {
     return (
-      <div key={this.props.event.id} className="card">
-        <div className="card-body">
-          <div class-name="card-title">
-            <h5>Event Title: {this.props.event.title}</h5>
-            <h5>Event Date: {this.props.event.date}</h5>
-            <h5>Event Time: {this.props.event.time}</h5>
-            <h5>Event Location: {this.props.event.location}</h5>
-            <div>
+      <div key={this.props.event.id} className="card w-25">
+        <div className="card-body bg-light">
+          <p className="card-title">{this.props.event.title}</p>
+          <p>Date: {this.props.event.date}</p>
+          <p>Time: {this.props.event.time}</p>
+          <p>Location: {this.props.event.location}</p>
+          <button
+            type="button"
+            className="btn-success"
+            onClick={() => {
+              this.props.history.push(`/events/${this.props.event.id}/edit`);
+            }}
+          >
+            Edit
+          </button>
+          <button
+            onClick={() => this.props.deleteEvent(this.props.event.id)}
+            className="btn-danger"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    );
+  }
+}
+
+{
+  /* <div>
               {parseInt(this.props.event.userId) ===
               parseInt(sessionStorage.getItem("userId"))
                 ? this.editButton
@@ -44,10 +45,5 @@ export default class EventsCard extends Component {
               parseInt(sessionStorage.getItem("userId"))
                 ? this.deleteButton
                 : null}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+            </div> */
 }

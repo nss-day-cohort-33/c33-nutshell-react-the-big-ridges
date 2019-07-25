@@ -12,6 +12,12 @@ export default Object.create(null, {
         }
     },
 
+  //   getAllWithId: {
+  //     value: function (resource, id) {
+  //         return fetch(`${remoteURL}/${resource}/?${resource}.userId=${id}`).then(data => data.json())
+  //     }
+  // },
+
     getAllExpand: {
         value: function (resource, expandResource) {
             return fetch(`${remoteURL}/${resource}?_expand=${expandResource}`).then(data => data.json())

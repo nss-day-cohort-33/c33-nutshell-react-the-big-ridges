@@ -1,10 +1,13 @@
-.events {
+/* .events {
     display: flex;
     justify-content: space-evenly;
 }
 
 .card {
-    width: 10rem;
+    width: 50rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .card-title {
@@ -14,6 +17,7 @@
     flex-direction: column;
 }
 
+
 .card-link {
     margin: 12px 0 0 0;
     font-size: 0.7em;
@@ -21,10 +25,18 @@
 
 .ownerList {
     font-size: 0.75em;
+}*/
+.row{
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.createEventButton {
+/* .createEventButton {
     display: flex;
     justify-content: space-evenly;
     margin: 0 0 10px 0;
+  } */
+
+  p:first-child {
+      text-emphasis: bold;
   }
