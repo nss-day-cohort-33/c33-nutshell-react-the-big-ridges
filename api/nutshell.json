@@ -202,5 +202,13 @@
       "id": 8
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "task": "rake the butt",
+      "date": "2222-08-22",
+      "complete": false,
+      "userId": 1,
+      "id": 1
+    }
+  ]
 }

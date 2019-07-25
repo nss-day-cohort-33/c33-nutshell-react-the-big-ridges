@@ -1,23 +1,23 @@
-import React, { Component } from "react"
-import APIManager from "../../module/APIManager"
-import "./News.css"
+import React, { Component } from "react";
+import APIManager from "../../module/APIManager";
+import "./News.css";
 
 export default class NewsEditForm extends Component {
-    state = {
-        userId: "",
-        title: "",
-        url: "",
-        synopsis: ""
-    };
+  state = {
+    userId: "",
+    title: "",
+    url: "",
+    synopsis: ""
+  };
 
-    handleFieldChange = evt => {
-        const stateToChange = {}
-        stateToChange[evt.target.id] = evt.target.value
-        this.setState(stateToChange)
-    }
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
+  };
 
-    updateExistingArticle = evt => {
-      evt.preventDefault()
+  updateExistingArticle = evt => {
+    evt.preventDefault();
 
     //   if (!this.state.newsId) {
     //     window.alert("Please fix this Sam");
@@ -31,70 +31,71 @@ export default class NewsEditForm extends Component {
             timeStamp: Date.now()
         };
 
-    this.props.updateArticle(editedArticle)
-    .then(() => this.props.history.push("/news"))
+    this.props
+      .updateArticle(editedArticle)
+      .then(() => this.props.history.push("/news"));
     // }
+  };
+
+  componentDidMount() {
+    return APIManager.get("news", this.props.match.params.newsId).then(
+      article => {
+        this.setState({
+          userId: article.userId,
+          title: article.title,
+          url: article.url,
+          synopsis: article.synopsis
+        });
+      }
+    );
   }
 
-    componentDidMount() {
-      return APIManager.get("news", this.props.match.params.newsId)
-      .then(article => {
-        this.setState({
-            userId: article.userId,
-            title: article.title,
-            url: article.url,
-            synopsis: article.synopsis
-        });
-      });
-    }
-
-
-    render() {
-      return (
-        <React.Fragment>
-          <form className="newsEditForm">
-            <div className="form-group">
-                    <label htmlFor="title">Title</label>
-                    <input
-                    type="text"
-                    required
-                    className="form-control"
-                    onChange={this.handleFieldChange}
-                    id="title"
-                    value = {this.state.title}
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="url">URL</label>
-                    <input
-                        type="text"
-                        required
-                        className="form-control"
-                        onChange={this.handleFieldChange}
-                        id="url"
-                        value = {this.state.url}
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="synopsis">Synopsis</label>
-                    <input
-                        type="text"
-                        required
-                        className="form-control"
-                        onChange={this.handleFieldChange}
-                        id="synopsis"
-                        value = {this.state.synopsis}
-                    />
-                </div>
-            <button
-              type="submit"
-              onClick={this.updateExistingArticle}
-              className="btn btn-primary"
-            >
-              Submit
-            </button>
-          </form>
-        </React.Fragment>
-      );
-    }
+  render() {
+    return (
+      <React.Fragment>
+        <form className="newsEditForm">
+          <div className="form-group">
+            <label htmlFor="title">Title</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="title"
+              value={this.state.title}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="url">URL</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="url"
+              value={this.state.url}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="synopsis">Synopsis</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="synopsis"
+              value={this.state.synopsis}
+            />
+          </div>
+          <button
+            type="submit"
+            onClick={this.updateExistingArticle}
+            className="btn btn-primary"
+          >
+            Submit
+          </button>
+        </form>
+      </React.Fragment>
+    );
+  }
 }
