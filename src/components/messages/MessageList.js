@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./message.css"
 // import { Link } from "react-router-dom";
 import MessageCard from "./MessageCard"
-import APIManager from "../../module/APIManager"
+// import APIManager from "../../module/APIManager"
 
 
 export default class MessageList extends Component {
@@ -23,9 +23,9 @@ export default class MessageList extends Component {
         evt.preventDefault();
         {
           const message = {
-            userId: parseInt(sessionStorage.getItem("userId")),
-            message: this.state.newMessage,
-            timeStamp: Date.now()
+              message: this.state.newMessage,
+              timeStamp: Date.now(),
+              userId: parseInt(sessionStorage.getItem("userId"))
           };
 
           this.props

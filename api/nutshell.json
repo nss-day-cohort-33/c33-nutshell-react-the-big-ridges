@@ -49,36 +49,88 @@
       "id": 8
     }
   ],
-  "friends": [],
-  "messages": [
+  "friends": [
     {
+      "user_Id": 1,
+      "userId": 4,
+      "id": 1
+    },
+    {
+      "user_Id": 1,
       "userId": 2,
-      "message": "blah  blah",
-      "userName": "Me",
       "id": 2
     },
     {
-      "userId": 1,
-      "message": "Well",
-      "userName": "Me",
+      "user_Id": 1,
+      "userId": 3,
+      "id": 1
+    },
+    {
+      "user_Id": 1,
+      "userId": 5,
+      "id": 2
+    },
+    {
+      "user_Id": 2,
+      "userId": 3,
+      "id": 1
+    },
+    {
+      "user_Id": 2,
+      "userId": 5,
+      "id": 2
+    },
+    {
+      "user_Id": 5,
+      "userId": 3,
       "id": 3
     },
     {
-      "userId": 2,
-      "message": "whats up yo!!",
-      "userName": "Me",
+      "user_Id": 5,
+      "userId": 1,
       "id": 4
     },
     {
+      "user_Id": 5,
+      "userId": 2,
+      "id": 5
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "message": "Hi guyzaxzzzsss",
+      "timeStamp": 1564063115185,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "message": "blah  blahzzzzqaaa",
+      "timeStamp": 1564021163089,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "message": "hello WORLDzaaaaaafrfffaaaa",
+      "timeStamp": 1564068532973,
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "message": "heyBBBaaa",
+      "timeStamp": 1563909419431,
+      "userId": 2
+    },
+    {
       "userId": 1,
-      "message": "whats up yo!!",
-      "userName": "Me",
+      "message": "hello",
+      "timeStamp": 1564068450382,
       "id": 5
     },
     {
-      "userId": 2,
-      "message": "whats up yo!!",
-      "userName": "Me",
+      "message": "anything new",
+      "timeStamp": 1564068527899,
+      "userId": 1,
       "id": 6
     },
     {
@@ -97,6 +149,17 @@
       "message": "hello",
       "timeStamp": 1563980711197,
       "id": 9
+    },
+    {
+      "id": 10,
+      "message": "hhhaa",
+      "timeStamp": 1564069912200,
+      "userId": 5
+    },
+    {
+      "timeStamp": 1564069908508,
+      "userId": 5,
+      "id": 11
     }
   ],
   "events": [
@@ -110,10 +173,10 @@
     },
     {
       "userId": 1,
-      "title": "that",
-      "date": "that",
-      "time": "that",
-      "location": "that",
+      "title": "sam",
+      "date": "sam",
+      "time": "sam",
+      "location": "sam",
       "id": 3
     }
   ],

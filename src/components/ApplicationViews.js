@@ -1,4 +1,3 @@
-// import { Route, Redirect } from "react-router-dom";
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import TaskList from "./tasks/TaskList";
@@ -14,8 +13,11 @@ import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register";
+import FriendRequest from "./messages/FriendRequest"
+import FriendsList from "./friends/FriendsList"
 import TaskEditForm from "./tasks/TaskEditForm";
 import TaskForm from "./tasks/TaskForm";
+
 
 class ApplicationViews extends Component {
   isAuthenticated = () => sessionStorage.getItem("userId") !== null;
@@ -23,29 +25,25 @@ class ApplicationViews extends Component {
   state = {
     events: [],
     news: [],
+    friends: [],
     tasks: [],
     messages: [],
-    users: [],
-    friends: []
+    users: []
   };
 
   componentDidMount() {
     const newState = {};
-    // const id = parsInt(sessionStorage.getItem("usertId"))
 
+    APIManager.getAll("friends")
+    .then(friends => newState.friends = friends)
     APIManager.getAll("events")
       .then(events => (newState.events = events))
-      .then(() => this.setState(newState));
-    APIManager.getAllExpand("messages", "user").then(
-      messages => (newState.messages = messages)
-    );
+    APIManager.getAllExpand("messages", "user")
+    .then( messages => (newState.messages = messages))
     APIManager.getAll("users")
       .then(users => (newState.users = users))
-      .then(() => this.setState(newState));
-    APIManager.getAll("news")
-      .then(news => (newState.news = news))
-      .then(() => this.setState(newState));
-    APIManager.getAll("tasks").then(tasks => (newState.tasks = tasks));
+    APIManager.getAll("tasks")
+    .then(tasks => (newState.tasks = tasks));
     APIManager.getAllMessages("news")
       .then(news => (newState.news = news))
       .then(() => this.setState(newState));
@@ -149,7 +147,30 @@ class ApplicationViews extends Component {
       );
   };
 
-  updateArticle = editedArticle => {
+  addFriend = (friend) => {
+    if(parseInt(sessionStorage.getItem("userId") === friend.user_Id && friend.userId !== this.state.friends.userId) ) {
+    return APIManager.post(friend, "friends")
+    .then (() =>
+    APIManager.getAll("friends")
+    )
+    .then ( friends =>
+      this.setState({
+        friends: friends
+      })
+      )
+    }
+    else {
+      alert("you are already friends!")
+     return APIManager.getAll("friends")
+    .then ( friends =>
+      this.setState({
+        friends: friends
+      })
+      )
+    }
+  }
+
+  updateArticle = (editedArticle) => {
     return APIManager.put(editedArticle, "news")
       .then(() => APIManager.getAll("news"))
       .then(news =>
@@ -273,22 +294,19 @@ class ApplicationViews extends Component {
             }
           }}
         />
-        <Route
-          path="/events/new"
-          render={props => {
-            return (
-              <EventsForm
-                {...props}
-                addEvent={this.addEvent}
-                events={this.state.events}
-              />
+
+        <Route path="/friends" render={props => {
+            return <FriendsList {...props} users={this.state.users} friends={this.state.friends}/>
+        }} />
+
+        <Route path="/events/new" render={props => {
+            return (<EventsForm {...props} addEvent={this.addEvent} events={this.state.events} />
             );
           }}
         />
 
         <Route
-          path="/events/:eventId(\d+)/edit"
-          render={props => {
+          path="/events/:eventId(\d+)/edit" render={props => {
             return (
               <EventsEditForm
                 {...props}
@@ -299,10 +317,15 @@ class ApplicationViews extends Component {
           }}
         />
 
-        <Route
-          exact
-          path="/tasks"
-          render={props => {
+        <Route path="/messages/:messageId(\d+)/edit" render={props => {
+                     return <MessageEditForm {...props} messages={this.state.messages} updateMessage={this.updateMessage}/>
+                }} />
+
+        <Route exact path="/messages/:userId(\d+)/:friendName/friendRequest" render={(props) => {
+                    return <FriendRequest {...props} addFriend={this.addFriend}/>
+                }} />
+
+        <Route exact path="/tasks" render={props => {
             if (this.isAuthenticated()) {
               return (
                 <TaskList
@@ -356,6 +379,7 @@ class ApplicationViews extends Component {
         />
 
         <Route
+          exact path="/tasks"
           exact
           path="/friends"
           render={props => {
@@ -366,25 +390,6 @@ class ApplicationViews extends Component {
             }
           }}
         />
-        <Route
-          path="/messages/:messageId(\d+)/edit"
-          render={props => {
-            return (
-              <MessageEditForm
-                {...props}
-                messages={this.state.messages}
-                updateMessage={this.updateMessage}
-              />
-            );
-          }}
-        />
-        {/* <Route
-          exact
-          path="/messages/:userId(\d+)/:friendName/friendRequest"
-          render={props => {
-            return <FriendRequest {...props} addFriend={this.addFriend} />;
-          }}
-        /> */}
         <Route
           exact
           path="/messages"
