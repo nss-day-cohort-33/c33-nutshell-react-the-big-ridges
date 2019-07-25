@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./task.css"
 
 export default class TaskCard extends Component {
   handleCheck = event => {
@@ -7,11 +8,11 @@ export default class TaskCard extends Component {
     this.props.task.complete = !this.props.task.complete;
     this.props.updateTask(this.props.task);
   };
-  
+
 
   render() {
     return (
-      <div key={this.props.task.id} className="card">
+      <div key={this.props.task.id} className="card bg-light w-25">
         <div className="card-body">
           <div className="card-title">
             {this.props.task.complete ? (
@@ -30,22 +31,22 @@ export default class TaskCard extends Component {
               />
             </label>
 
-            <a
-              href="#"
+            <button
               onClick={() =>
                 this.props.history.push(`/tasks/${this.props.task.id}/edit`)
               }
-              className="card-link"
+              className="btn-success"
+              type="button"
             >
               Edit
-            </a>
-            <a
-              href="#"
+            </button>
+            <button
+            type="button"
               onClick={() => this.props.deleteTask(this.props.task.id)}
-              className="card-link"
+              className="btn-danger"
             >
               Delete
-            </a>
+            </button>
           </div>
         </div>
       </div>

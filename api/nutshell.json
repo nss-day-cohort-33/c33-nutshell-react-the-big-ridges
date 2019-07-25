@@ -2,7 +2,7 @@
   "users": [
     {
       "name": "Me",
-      "email": "Me@me",
+      "email": "Me@email.com",
       "password": "Me",
       "id": 1
     },
@@ -14,13 +14,13 @@
     },
     {
       "name": "a",
-      "email": "a@a",
+      "email": "a@email.com",
       "password": "a",
       "id": 3
     },
     {
       "name": "AA",
-      "email": "AA@b",
+      "email": "AA@email.com",
       "password": "a",
       "id": 4
     },
@@ -43,9 +43,9 @@
       "id": 7
     },
     {
-      "name": "Berkeley",
-      "email": "berkeleypaul989@gmail.com",
-      "password": "taco",
+      "name": "jo",
+      "email": "jo@jo.com",
+      "password": "jo",
       "id": 8
     }
   ],
@@ -56,38 +56,21 @@
       "id": 1
     },
     {
-      "user_Id": 1,
-      "userId": 2,
-      "id": 2
+      "id": 2,
+      "message": "things",
+      "timeStamp": 1563910676257,
+      "userId": 1
     },
     {
-      "user_Id": 1,
-      "userId": 3,
-      "id": 1
+      "id": 3,
+      "message": "blah blah blah",
+      "timeStamp": 1563910670840,
+      "userId": 1
     },
     {
-      "user_Id": 1,
-      "userId": 5,
-      "id": 2
-    },
-    {
-      "user_Id": 2,
-      "userId": 3,
-      "id": 1
-    },
-    {
-      "user_Id": 2,
-      "userId": 5,
-      "id": 2
-    },
-    {
-      "user_Id": 5,
-      "userId": 3,
-      "id": 3
-    },
-    {
-      "user_Id": 5,
       "userId": 1,
+      "message": "you go girl",
+      "timeStamp": 1563910526465,
       "id": 4
     },
     {
@@ -123,25 +106,26 @@
     },
     {
       "userId": 1,
-      "message": "hello",
-      "timeStamp": 1564068450382,
+      "message": "Sam",
+      "timeStamp": 1563914847891,
       "id": 5
     },
     {
-      "message": "anything new",
-      "timeStamp": 1564068527899,
-      "userId": 1,
-      "id": 6
+      "id": 6,
+      "message": "drewman",
+      "timeStamp": 1563985750852,
+      "userId": 1
+    },
+    {
+      "id": 7,
+      "message": "hola",
+      "timeStamp": 1563979354182,
+      "userId": 6
     },
     {
       "userId": 1,
-      "timeStamp": 1563980477637,
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "message": "hello",
-      "timeStamp": 1563980545068,
+      "message": "you go girl",
+      "timeStamp": 1563985756789,
       "id": 8
     },
     {
@@ -164,46 +148,62 @@
   ],
   "events": [
     {
-      "userId": 2,
-      "title": "take out trask",
-      "date": "2019-07-27",
-      "time": "15:00",
-      "location": "my house",
-      "id": 2
+      "userId": 1,
+      "title": "fdsa",
+      "date": "fdsa",
+      "time": "fdsa",
+      "location": "fdsa",
+      "id": 1
     },
     {
       "userId": 1,
-      "title": "sam",
-      "date": "sam",
-      "time": "sam",
-      "location": "sam",
+      "title": "fdsa",
+      "date": "asdf",
+      "time": "dsafa",
+      "location": "qevae",
+      "id": 2
+    },
+    {
+      "userId": 6,
+      "title": "party",
+      "date": "tomorrow",
+      "time": "8",
+      "location": "NSS",
       "id": 3
+    },
+    {
+      "userId": 1,
+      "title": "treechop",
+      "date": "today",
+      "time": "now",
+      "location": "here",
+      "id": 4
+    },
+    {
+      "userId": 8,
+      "title": "jo stuff",
+      "date": "august 1",
+      "time": "anytime",
+      "location": "your house",
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "event",
+      "date": "date",
+      "time": "time",
+      "location": "location",
+      "id": 6
     }
   ],
   "news": [
     {
-      "userId": 2,
-      "url": "http://www.google.com",
-      "title": "something newaaaa",
-      "synopsis": "bbbbb",
-      "timeStamp": 1562720082584,
-      "id": 2
-    },
-    {
-      "userId": 2,
-      "url": "http://www.google.com",
-      "title": "BBBBB22222",
-      "synopsis": "xcxc",
-      "timeStamp": 1562705971796,
-      "id": 3
-    },
-    {
-      "id": 2,
+      "id": 1,
       "userId": 1,
-      "title": "Drew",
+      "title": "Sam",
       "url": "http://www.mothedev.com",
-      "synopsis": "Drew",
-      "timeStamp": 1563997155865
+      "synopsis": "Sam",
+      "timeStamp": 1563997126068
     },
     {
       "id": 3,
@@ -212,22 +212,6 @@
       "url": "http://www.mothedev.com",
       "synopsis": "Berk",
       "timeStamp": 1563997157579
-    },
-    {
-      "userId": 3,
-      "url": "",
-      "title": "",
-      "synopsis": "",
-      "timeStamp": 1562706033138,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "title": "Joe",
-      "url": "http://www.mothedev.com",
-      "synopsis": "Joe",
-      "timeStamp": 1563997022096,
-      "id": 5
     },
     {
       "userId": 1,
@@ -244,64 +228,31 @@
       "synopsis": "samamamama",
       "timeStamp": 1563999557131,
       "id": 7
+    },
+    {
+      "userId": 8,
+      "title": "article",
+      "url": "www.www.com",
+      "synopsis": "thinasdlknas;ldnfv",
+      "timeStamp": 1564067655979,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "title": "blah",
+      "url": "blah",
+      "synopsis": "blah",
+      "timeStamp": 1564083028042,
+      "id": 9
     }
   ],
   "tasks": [
     {
-      "task": "five",
-      "date": "",
+      "task": "rake the butt",
+      "date": "2222-08-22",
       "complete": false,
       "userId": 1,
-      "id": 6
-    },
-    {
-      "task": "oneTwo",
-      "date": "",
-      "complete": false,
-      "userId": 2,
-      "id": 7
-    },
-    {
-      "task": "twoTwo",
-      "date": "",
-      "complete": false,
-      "userId": 2,
-      "id": 8
-    },
-    {
-      "task": "seven",
-      "date": "",
-      "complete": false,
-      "userId": 1,
-      "id": 9
-    },
-    {
-      "task": "eight",
-      "date": "",
-      "complete": false,
-      "userId": 1,
-      "id": 10
-    },
-    {
-      "id": 11,
-      "userId": 8,
-      "task": "onetwo",
-      "date": "2019-07-08",
-      "complete": false
-    },
-    {
-      "id": 12,
-      "userId": 8,
-      "task": "threefour",
-      "date": "2019-07-10",
-      "complete": false
-    },
-    {
-      "task": "five",
-      "date": "2019-07-23",
-      "complete": false,
-      "userId": 8,
-      "id": 13
+      "id": 1
     }
   ]
 }

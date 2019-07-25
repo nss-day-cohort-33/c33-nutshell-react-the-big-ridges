@@ -9,7 +9,7 @@ export default class UserCard extends Component {
     render() {
 
         return (
-            <div key={this.props.user.id} className="card">
+            <div key={this.props.user.id} className="card w-25 bg-light">
                 <div className="card-body">
                     <div className="card-title" >
                         {

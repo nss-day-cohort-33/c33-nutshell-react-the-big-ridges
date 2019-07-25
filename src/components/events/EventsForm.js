@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./events.css";
-
 
 export default class EventsForm extends Component {
   // Set initial state
