@@ -18,8 +18,7 @@ import TaskEditForm from "./tasks/TaskEditForm";
 import TaskForm from "./tasks/TaskForm";
 
 class ApplicationViews extends Component {
-
-  isAuthenticated = () => sessionStorage.getItem("userId") !== null
+  isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
   state = {
     events: [],
@@ -46,9 +45,9 @@ class ApplicationViews extends Component {
     APIManager.getAll("news")
       .then(news => (newState.news = news))
       .then(() => this.setState(newState));
-    APIManager.getAll("tasks")
-      .then(tasks => (newState.tasks = tasks))
-    APIManager.getAllMessages("news").then(news => newState.news = news)
+    APIManager.getAll("tasks").then(tasks => (newState.tasks = tasks));
+    APIManager.getAllMessages("news")
+      .then(news => (newState.news = news))
       .then(() => this.setState(newState));
   }
 
@@ -222,19 +221,22 @@ class ApplicationViews extends Component {
             return <Register {...props} addUser={this.addUser} />;
           }}
         />
-<<<<<<< HEAD
         {/* Start news routes */}
         <Route
           exact
           path="/news"
           render={props => {
-            return (
-              <NewsList
-                {...props}
-                deleteArticle={this.deleteArticle}
-                news={this.state.news}
-              />
-            );
+            if (this.isAuthenticated()) {
+              return (
+                <NewsList
+                  {...props}
+                  deleteArticle={this.deleteArticle}
+                  news={this.state.news}
+                />
+              );
+            } else {
+              return <Redirect to="/" />;
+            }
           }}
         />
         <Route
@@ -254,47 +256,22 @@ class ApplicationViews extends Component {
           }}
         />
         {/* End news routes */}
-
-=======
-{/* Start news routes */}
-          <Route
-          exact path="/news" render={ props => {
-            if (this.isAuthenticated()) {
-              return <NewsList  {...props}
-              deleteArticle={this.deleteArticle}
-              news={this.state.news} />
-           } else {
-             return <Redirect to="/" />
-           }
-        }}
-          />
-          <Route
-            exact path="/news/new" render={ props => {
-                    return <NewsForm  {...props}
-                                        addArticle={this.addArticle} />
-            }} />
-          <Route
-            exact path="/news/:newsId(\d+)/edit" render={ props => {
-                    return <NewsEditForm
-                                    {...props}
-                                    updateArticle={this.updateArticle} />
-                }}/>
-{/* End news routes */}
->>>>>>> master
         <Route
           exact
           path="/events"
           render={props => {
             if (this.isAuthenticated()) {
-            return <EventsList
-                {...props}
-                deleteEvent={this.deleteEvent}
-                events={this.state.events}
-              />
+              return (
+                <EventsList
+                  {...props}
+                  deleteEvent={this.deleteEvent}
+                  events={this.state.events}
+                />
+              );
             } else {
-                return <Redirect to="/" />
-              }
-           }}
+              return <Redirect to="/" />;
+            }
+          }}
         />
         <Route
           path="/events/new"
@@ -326,29 +303,20 @@ class ApplicationViews extends Component {
           exact
           path="/tasks"
           render={props => {
-<<<<<<< HEAD
-            return (
-              <TaskList
-=======
             if (this.isAuthenticated()) {
-            return <MessageList
->>>>>>> master
-                {...props}
-                tasks={this.state.tasks}
-                deleteTask={this.deleteTask}
-              />
-<<<<<<< HEAD
-            );
+              return (
+                <TaskList
+                  {...props}
+                  tasks={this.state.tasks}
+                  deleteTask={this.deleteTask}
+                />
+              );
+            } else {
+              return <Redirect to="/" />;
+            }
           }}
         />
-=======
-            } else {
-            return <Redirect to="/" />
-          }
-       }}
-    />
 
->>>>>>> master
         <Route
           exact
           path="/tasks/new"
@@ -376,19 +344,28 @@ class ApplicationViews extends Component {
         />
 
         <Route
-          exact path="/tasks"
+          exact
+          path="/tasks"
           render={props => {
-<<<<<<< HEAD
-            return (
-              <MessageList
-                {...props}
-                messages={this.state.messages}
-                addMessage={this.addMessage}
-              />
-            );
+            if (this.isAuthenticated()) {
+              return null;
+            } else {
+              return <Redirect to="/" />;
+            }
           }}
         />
 
+        <Route
+          exact
+          path="/friends"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return null;
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        />
         <Route
           path="/messages/:messageId(\d+)/edit"
           render={props => {
@@ -401,26 +378,30 @@ class ApplicationViews extends Component {
             );
           }}
         />
-=======
-            if (this.isAuthenticated()) {
-            return null;
-          }else {
-            return <Redirect to="/" />
-          }
-       }}
-      />
-
+        {/* <Route
+          exact
+          path="/messages/:userId(\d+)/:friendName/friendRequest"
+          render={props => {
+            return <FriendRequest {...props} addFriend={this.addFriend} />;
+          }}
+        /> */}
         <Route
-          exact path="/friends"
+          exact
+          path="/messages"
           render={props => {
             if (this.isAuthenticated()) {
-            return null;
-          }else {
-            return <Redirect to="/" />
-          }
-       }}
-      />
->>>>>>> master
+              return (
+                <MessageList
+                  {...props}
+                  messages={this.state.messages}
+                  addMessage={this.addMessage}
+                />
+              );
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        />
       </React.Fragment>
     );
   }

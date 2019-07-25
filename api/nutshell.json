@@ -7,9 +7,6 @@
       "id": 1
     },
     {
-      "name": "you",
-      "email": "you@you",
-      "password": "you",
       "name": "JOHN",
       "email": "Me@email.com",
       "password": "sam",
@@ -44,6 +41,12 @@
       "email": "Karla@email.com",
       "password": "Karla",
       "id": 7
+    },
+    {
+      "name": "Berkeley",
+      "email": "berkeleypaul989@gmail.com",
+      "password": "taco",
+      "id": 8
     }
   ],
   "friends": [],
@@ -116,13 +119,6 @@
   ],
   "news": [
     {
-      "id": 1,
-      "userId": 1,
-      "title": "Dangerone",
-      "url": "whatever",
-      "synopsis": "gravel road on Balsam Mountain"
-    },
-    {
       "userId": 2,
       "url": "http://www.google.com",
       "title": "something newaaaa",
@@ -137,12 +133,6 @@
       "synopsis": "xcxc",
       "timeStamp": 1562705971796,
       "id": 3
-    },
-    {
-      "title": "Sam",
-      "url": "http://www.mothedev.com",
-      "synopsis": "Sam",
-      "timeStamp": 1563997126068
     },
     {
       "id": 2,
@@ -167,19 +157,6 @@
       "synopsis": "",
       "timeStamp": 1562706033138,
       "id": 4
-    },
-    {
-      "userId": 1,
-      "title": "this",
-      "url": "this",
-      "synopsis": "this",
-    },
-    {
-      "id": 5,
-      "title": "Curt2",
-      "url": "https://www.facebook.com/",
-      "synopsis": "Curt2",
-      "timeStamp": 1563997683766
     },
     {
       "userId": 1,
