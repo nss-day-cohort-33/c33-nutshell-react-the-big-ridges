@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./task.css"
 
 export default class TaskCard extends Component {
   completedTask(id) {
@@ -12,39 +13,39 @@ export default class TaskCard extends Component {
 
   taskFunctions = (
     <div>
-      <label>
-        Complete:
-        <input
-          name="complete"
-          type="checkbox"
-          onClick={() => {
-            // this.completedTask(task.id)
-          }}
-        />
-      </label>
-
-      <a
-        href="#"
+      <div>
+        <label>
+          Complete:
+          <input
+            name="complete"
+            type="checkbox"
+            onClick={() => {
+              // this.completedTask(task.id)
+            }}
+          />
+        </label>
+      </div>
+      <button
+        type="button"
+        className="btn-success"
         onClick={() =>
           this.props.history.push(`/tasks/${this.props.task.id}/edit`)
         }
-        className="card-link"
       >
         Edit
-      </a>
-      <a
-        href="#"
+      </button>
+      <button
         onClick={() => this.props.deleteTask(this.props.task.id)}
-        className="card-link"
+        className="btn-danger"
       >
         Delete
-      </a>
+      </button>
     </div>
   );
 
   render() {
     return (
-      <div key={this.props.task.id} className="card">
+      <div key={this.props.task.id} className="card w-25 bg-light">
         <div className="card-body">
           <div className="card-title">
             <h5>{this.props.task.task}</h5>

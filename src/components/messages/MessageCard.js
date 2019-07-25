@@ -33,9 +33,9 @@ export default class MessageCard extends Component {
     render() {
 
         return (
-            <div key={this.props.message.id} className="card">
+            <div key={this.props.message.id} className="card w-100 bg-light">
                 <div className="card-body">
-                    <div className="card-title" >
+                    <div className="card-titlel" >
                         {
                               parseInt(this.props.message.userId) !== parseInt(sessionStorage.getItem("userId")) ?
                               <div>

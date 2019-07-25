@@ -1,9 +1,30 @@
 .row{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap
 }
 
   .eventsCard:first-child {
-    background-color: blue;
-    font-weight: bold
+    font-weight: bold;
   }
+
+  div.row > div {
+    background-color:whitesmoke;
+
+  }
+
+  .eventsCard:first-child > div.eventsBody {
+    background-color: lightblue;
+    width: 45;
+    height: 50
+
+  }
+
+  .createEventButton {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 0 10px 0;
+  }
+
+
+
