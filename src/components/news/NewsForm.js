@@ -21,7 +21,7 @@ export default class NewsForm extends Component {
         if (this.state.articleTitle === "" || this.state.url === "" || this.state.synopsis === "" ) {
           window.alert("Please Fill Out All Sections");
         }
-        if (!this.state.url.includes("http://" && "https://")){
+        if (!this.state.url.includes("https://") && !this.state.url.includes("http://")){
             window.alert("Please Add http:// or https:// to URL")
         }
         // if (this.state.url === "") {

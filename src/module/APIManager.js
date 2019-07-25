@@ -24,7 +24,7 @@ export default Object.create(null, {
       return fetch(`${remoteURL}/${resource}?userId=${userId}`).then(data => data.json())
     }
   },
-    getAllMessages: {
+    getAllNews : {
         value: function (resource) {
             return fetch(`${remoteURL}/${resource}?_sort=timeStamp`).then(data => data.json())
         }
