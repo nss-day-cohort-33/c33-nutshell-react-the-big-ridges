@@ -334,6 +334,7 @@ class ApplicationViews extends Component {
                   {...props}
                   tasks={this.state.tasks}
                   deleteTask={this.deleteTask}
+                  updateTask={this.updateTask}
                 />
               );
             } else {
@@ -392,6 +393,25 @@ class ApplicationViews extends Component {
             }
           }}
         />
+        <Route
+          path="/messages/:messageId(\d+)/edit"
+          render={props => {
+            return (
+              <MessageEditForm
+                {...props}
+                messages={this.state.messages}
+                updateMessage={this.updateMessage}
+              />
+            );
+          }}
+        />
+          {/* <Route
+            exact
+            path="/messages/:userId(\d+)/:friendName/friendRequest"
+            render={props => {
+              return <FriendRequest {...props} addFriend={this.addFriend} />;
+            }}
+          /> */}
         <Route
           exact
           path="/messages"
