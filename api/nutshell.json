@@ -51,7 +51,6 @@
   ],
   "friends": [
     {
-<<<<<<< HEAD
       "user_Id": 3,
       "userId": 2,
       "id": 1
@@ -69,28 +68,6 @@
     {
       "user_Id": 3,
       "userId": 2,
-=======
-      "user_Id": 1,
-      "userId": 4,
-      "id": 1
-    },
-    {
-      "id": 2,
-      "message": "things",
-      "timeStamp": 1563910676257,
-      "userId": 1
-    },
-    {
-      "id": 3,
-      "message": "blah blah blah",
-      "timeStamp": 1563910670840,
-      "userId": 1
-    },
-    {
-      "userId": 1,
-      "message": "you go girl",
-      "timeStamp": 1563910526465,
->>>>>>> master
       "id": 4
     },
     {

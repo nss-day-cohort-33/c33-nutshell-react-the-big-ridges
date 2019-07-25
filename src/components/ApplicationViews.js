@@ -150,7 +150,7 @@ class ApplicationViews extends Component {
   addFriend = (friend) => {
     const istrue = false
     console.log(this.state.friends.userId)
-    if(parseInt(sessionStorage.getItem("userId")) === friend.user_Id && forEach) {
+    if(parseInt(sessionStorage.getItem("userId")) === friend.user_Id) {
     return APIManager.post(friend, "friends")
     .then (() =>
     APIManager.getAll("friends")
