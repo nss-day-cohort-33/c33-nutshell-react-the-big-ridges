@@ -49,8 +49,12 @@
       "id": 8
     }
   ],
-  "friends": [],
-  "messages": [
+  "friends": [
+    {
+      "user_Id": 1,
+      "userId": 4,
+      "id": 1
+    },
     {
       "id": 2,
       "message": "things",
@@ -68,6 +72,37 @@
       "message": "you go girl",
       "timeStamp": 1563910526465,
       "id": 4
+    },
+    {
+      "user_Id": 5,
+      "userId": 2,
+      "id": 5
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "message": "Hi guyzaxzzzsss",
+      "timeStamp": 1564063115185,
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "message": "blah  blahzzzzqaaa",
+      "timeStamp": 1564021163089,
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "message": "hello WORLDzaaaaaafrfffaaaa",
+      "timeStamp": 1564068532973,
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "message": "heyBBBaaa",
+      "timeStamp": 1563909419431,
+      "userId": 2
     },
     {
       "userId": 1,
@@ -92,6 +127,23 @@
       "message": "you go girl",
       "timeStamp": 1563985756789,
       "id": 8
+    },
+    {
+      "userId": 1,
+      "message": "hello",
+      "timeStamp": 1563980711197,
+      "id": 9
+    },
+    {
+      "id": 10,
+      "message": "hhhaa",
+      "timeStamp": 1564069912200,
+      "userId": 5
+    },
+    {
+      "timeStamp": 1564069908508,
+      "userId": 5,
+      "id": 11
     }
   ],
   "events": [

@@ -6,7 +6,7 @@ export default class EventsCard extends Component {
 
   render() {
     return (
-      <div key={this.props.event.id} className="card w-25">
+      <div key={this.props.event.id} className="card eventsCard w-25">
         <div className="card-body bg-light">
           <p className="card-title">{this.props.event.title}</p>
           <p>Date: {this.props.event.date}</p>

@@ -3,6 +3,7 @@
     justify-content: space-evenly;
 }
 
-  div:first-child {
-      text-emphasis: bold;
+  .eventsCard:first-child {
+    background-color: blue;
+    font-weight: bold
   }
