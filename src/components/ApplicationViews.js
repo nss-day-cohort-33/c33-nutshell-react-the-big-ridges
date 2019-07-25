@@ -148,7 +148,9 @@ class ApplicationViews extends Component {
   };
 
   addFriend = (friend) => {
-    if(parseInt(sessionStorage.getItem("userId") === friend.user_Id && friend.userId !== this.state.friends.userId) ) {
+    const istrue = false
+    console.log(this.state.friends.userId)
+    if(parseInt(sessionStorage.getItem("userId")) === friend.user_Id && forEach) {
     return APIManager.post(friend, "friends")
     .then (() =>
     APIManager.getAll("friends")
@@ -296,7 +298,7 @@ class ApplicationViews extends Component {
         />
 
         <Route path="/friends" render={props => {
-            return <FriendsList {...props} users={this.state.users} friends={this.state.friends}/>
+            return <FriendsList {...props} users={this.state.users} friends={this.state.friends} addFriend={this.addFriend}/>
         }} />
 
         <Route path="/events/new" render={props => {
@@ -322,7 +324,7 @@ class ApplicationViews extends Component {
                 }} />
 
         <Route exact path="/messages/:userId(\d+)/:friendName/friendRequest" render={(props) => {
-                    return <FriendRequest {...props} addFriend={this.addFriend}/>
+                    return <FriendRequest {...props} addFriend={this.addFriend} />
                 }} />
 
         <Route exact path="/tasks" render={props => {

@@ -51,47 +51,27 @@
   ],
   "friends": [
     {
-      "user_Id": 1,
-      "userId": 4,
-      "id": 1
-    },
-    {
-      "user_Id": 1,
+      "user_Id": 3,
       "userId": 2,
-      "id": 2
-    },
-    {
-      "user_Id": 1,
-      "userId": 3,
       "id": 1
     },
     {
-      "user_Id": 1,
-      "userId": 5,
+      "user_Id": 3,
+      "userId": 1,
       "id": 2
     },
     {
-      "user_Id": 2,
-      "userId": 3,
-      "id": 1
-    },
-    {
-      "user_Id": 2,
-      "userId": 5,
-      "id": 2
-    },
-    {
-      "user_Id": 5,
-      "userId": 3,
+      "user_Id": 3,
+      "userId": 2,
       "id": 3
     },
     {
-      "user_Id": 5,
-      "userId": 1,
+      "user_Id": 3,
+      "userId": 2,
       "id": 4
     },
     {
-      "user_Id": 5,
+      "user_Id": 3,
       "userId": 2,
       "id": 5
     }
@@ -152,14 +132,27 @@
     },
     {
       "id": 10,
-      "message": "hhhaa",
-      "timeStamp": 1564069912200,
+      "message": "hhhaaaaaaaa",
+      "timeStamp": 1564082885100,
       "userId": 5
     },
     {
-      "timeStamp": 1564069908508,
+      "id": 11,
+      "message": "NEW MESSAGE",
+      "timeStamp": 1564083979149,
+      "userId": 5
+    },
+    {
+      "message": "Whats new",
+      "timeStamp": 1564083965720,
       "userId": 5,
-      "id": 11
+      "id": 12
+    },
+    {
+      "message": "hey",
+      "timeStamp": 1564084075381,
+      "userId": 3,
+      "id": 13
     }
   ],
   "events": [
