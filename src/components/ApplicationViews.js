@@ -1,11 +1,12 @@
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import MessageList from "./messages/MessageList"
 import MessageEditForm from "./messages/MessageEditForm"
 import APIManager from "../module/APIManager"
 import Login from "./authentication/Login"
 import Register from "./authentication/Register";
-
+import FriendRequest from "./messages/FriendRequest"
+import FriendsList from "./friends/FriendsList"
 export default class ApplicationViews extends Component {
 
   state = {
@@ -13,13 +14,19 @@ export default class ApplicationViews extends Component {
     tasks: [],
     events: [],
     news: [],
-    users: []
+    users: [],
+    friends: []
   }
+
 
    componentDidMount() {
     const newState = {}
-    console.log(newState)
+    const id = parseInt(sessionStorage.getItem("userId"))
+    console.log(id)
 
+
+    APIManager.getAll("friends")
+    .then(friends => newState.friends = friends)
     APIManager.getAllExpand("messages", "user")
     .then(messages => newState.messages = messages)
     APIManager.getAll("users")
@@ -58,6 +65,29 @@ export default class ApplicationViews extends Component {
     )
   }
 
+  addFriend = (friend) => {
+    if(parseInt(sessionStorage.getItem("userId") === friend.user_Id && friend.userId !== this.state.friends.userId) ) {
+    return APIManager.post(friend, "friends")
+    .then (() =>
+    APIManager.getAll("friends")
+    )
+    .then ( friends =>
+      this.setState({
+        friends: friends
+      })
+      )
+    }
+    else {
+      alert("you are already friends!")
+     return APIManager.getAll("friends")
+    .then ( friends =>
+      this.setState({
+        friends: friends
+      })
+      )
+    }
+  }
+
 
   render() {
     return (
@@ -92,8 +122,8 @@ export default class ApplicationViews extends Component {
 
         <Route
           path="/friends" render={props => {
-            return null
-            // Remove null and return the component which will show list of friends
+            return <FriendsList {...props} users={this.state.users} friends={this.state.friends}/>
+
           }}
         />
 
@@ -103,10 +133,12 @@ export default class ApplicationViews extends Component {
           }}
         />
 
-          <Route path="/messages/:messageId(\d+)/edit" render={props => {
+        <Route path="/messages/:messageId(\d+)/edit" render={props => {
                      return <MessageEditForm {...props} messages={this.state.messages} updateMessage={this.updateMessage}/>
                 }} />
-
+        <Route exact path="/messages/:userId(\d+)/:friendName/friendRequest" render={(props) => {
+                    return <FriendRequest {...props} addFriend={this.addFriend}/>
+                }} />
         <Route
           path="/tasks" render={props => {
             return null

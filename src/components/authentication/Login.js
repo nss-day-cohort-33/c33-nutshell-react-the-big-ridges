@@ -28,7 +28,7 @@ export default class Login extends Component {
                 element.password.toLowerCase() === this.state.password.toLowerCase()
             );
             if (singleUser) {
-                sessionStorage.setItem("user", singleUser.id);
+                sessionStorage.setItem("userId", singleUser.id);
                 this.props.history.push("/news");
             }
         }
