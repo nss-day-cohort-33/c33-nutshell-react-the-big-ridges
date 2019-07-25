@@ -332,6 +332,7 @@ class ApplicationViews extends Component {
                   {...props}
                   tasks={this.state.tasks}
                   deleteTask={this.deleteTask}
+                  updateTask={this.updateTask}
                 />
               );
             } else {
