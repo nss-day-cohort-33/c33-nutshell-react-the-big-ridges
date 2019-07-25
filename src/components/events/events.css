@@ -1,42 +1,8 @@
-/* .events {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.card {
-    width: 50rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.card-title {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
-
-
-.card-link {
-    margin: 12px 0 0 0;
-    font-size: 0.7em;
-}
-
-.ownerList {
-    font-size: 0.75em;
-}*/
 .row{
     display: flex;
     justify-content: space-evenly;
 }
 
-/* .createEventButton {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 0 10px 0;
-  } */
-
-  p:first-child {
+  div:first-child {
       text-emphasis: bold;
   }

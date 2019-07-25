@@ -12,11 +12,11 @@ export default Object.create(null, {
         }
     },
 
-  //   getAllWithId: {
-  //     value: function (resource, id) {
-  //         return fetch(`${remoteURL}/${resource}/?${resource}.userId=${id}`).then(data => data.json())
-  //     }
-  // },
+    getAllMessages: {
+        value: function (resource) {
+            return fetch(`${remoteURL}/${resource}?_sort=timeStamp`).then(data => data.json())
+        }
+    },
 
     getAllExpand: {
         value: function (resource, expandResource) {

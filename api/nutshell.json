@@ -9,7 +9,7 @@
     {
       "name": "JOHN",
       "email": "Me@email.com",
-      "password": "",
+      "password": "sam",
       "id": 2
     },
     {
@@ -31,10 +31,22 @@
       "id": 5
     },
     {
-      "name": "thing",
-      "email": "thing@thing.com",
-      "password": "thing",
+      "name": "Curt",
+      "email": "curt@email.com",
+      "password": "curt",
       "id": 6
+    },
+    {
+      "name": "Karla",
+      "email": "Karla@email.com",
+      "password": "Karla",
+      "id": 7
+    },
+    {
+      "name": "jo",
+      "email": "jo@jo.com",
+      "password": "jo",
+      "id": 8
     }
   ],
   "friends": [],
@@ -114,15 +126,80 @@
       "time": "now",
       "location": "here",
       "id": 4
+    },
+    {
+      "userId": 8,
+      "title": "jo stuff",
+      "date": "august 1",
+      "time": "anytime",
+      "location": "your house",
+      "id": 5
     }
   ],
   "news": [
     {
+      "id": 1,
       "userId": 1,
-      "title": "ab",
-      "url": "cd",
-      "synopsis": "ef",
+      "title": "Sam",
+      "url": "http://www.mothedev.com",
+      "synopsis": "Sam",
+      "timeStamp": 1563997126068
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "title": "Drew",
+      "url": "http://www.mothedev.com",
+      "synopsis": "Drew",
+      "timeStamp": 1563997155865
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "title": "Berk",
+      "url": "http://www.mothedev.com",
+      "synopsis": "Berk",
+      "timeStamp": 1563997157579
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "title": "Curt2",
+      "url": "https://www.facebook.com/",
+      "synopsis": "Curt2",
+      "timeStamp": 1563997683766
+    },
+    {
+      "userId": 1,
+      "title": "Joe",
+      "url": "http://www.mothedev.com",
+      "synopsis": "Joe",
+      "timeStamp": 1563997022096,
       "id": 5
+    },
+    {
+      "userId": 1,
+      "title": "Mo",
+      "url": "http://www.mothedev.com",
+      "synopsis": "Mo",
+      "timeStamp": 1563997640404,
+      "id": 6
+    },
+    {
+      "userId": 5,
+      "title": "ssaaaaam",
+      "url": "http://www.mothedev.com",
+      "synopsis": "samamamama",
+      "timeStamp": 1563999557131,
+      "id": 7
+    },
+    {
+      "userId": 8,
+      "title": "article",
+      "url": "www.www.com",
+      "synopsis": "thinasdlknas;ldnfv",
+      "timeStamp": 1564067655979,
+      "id": 8
     }
   ],
   "tasks": []
