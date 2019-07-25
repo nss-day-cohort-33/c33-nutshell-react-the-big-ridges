@@ -378,13 +378,13 @@ class ApplicationViews extends Component {
             );
           }}
         />
-        {/* <Route
-          exact
-          path="/messages/:userId(\d+)/:friendName/friendRequest"
-          render={props => {
-            return <FriendRequest {...props} addFriend={this.addFriend} />;
-          }}
-        /> */}
+          {/* <Route
+            exact
+            path="/messages/:userId(\d+)/:friendName/friendRequest"
+            render={props => {
+              return <FriendRequest {...props} addFriend={this.addFriend} />;
+            }}
+          /> */}
         <Route
           exact
           path="/messages"
