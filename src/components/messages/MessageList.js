@@ -25,7 +25,7 @@ export default class MessageList extends Component {
           const message = {
             userId: parseInt(sessionStorage.getItem("userId")),
             message: this.state.newMessage,
-            timestamp: Date.now()
+            timeStamp: Date.now()
           };
 
           this.props

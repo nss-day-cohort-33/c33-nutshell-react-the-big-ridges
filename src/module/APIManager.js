@@ -12,6 +12,12 @@ export default Object.create(null, {
         }
     },
 
+    getAllMessages: {
+        value: function (resource) {
+            return fetch(`${remoteURL}/${resource}?_sort=timeStamp`).then(data => data.json())
+        }
+    },
+
     getAllExpand: {
         value: function (resource, expandResource) {
             return fetch(`${remoteURL}/${resource}?_expand=${expandResource}&_sort=timeStamp`).then(data => data.json())
@@ -20,9 +26,14 @@ export default Object.create(null, {
 
     delete: {
         value: function (resource, id) {
+          console.log("id", id)
             return fetch(`${remoteURL}/${resource}/${id}`, {
-                method: "DELETE"
-            }).then(e => e.json())
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                  }
+            })
+            .then(e => e.json())
         }
     },
 
