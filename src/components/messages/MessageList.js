@@ -23,9 +23,9 @@ export default class MessageList extends Component {
         evt.preventDefault();
         {
           const message = {
-            userId: parseInt(sessionStorage.getItem("userId")),
-            message: this.state.newMessage,
-            timeStamp: Date.now()
+              message: this.state.newMessage,
+              timeStamp: Date.now(),
+              userId: parseInt(sessionStorage.getItem("userId"))
           };
 
           this.props

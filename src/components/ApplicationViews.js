@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import APIManager from "../module/APIManager";
@@ -15,8 +15,9 @@ import Register from "./authentication/Register";
 import FriendRequest from "./messages/FriendRequest"
 import FriendsList from "./friends/FriendsList"
 
+ class ApplicationViews extends Component {
 
-export default class ApplicationViews extends Component {
+  isAuthenticated = () => sessionStorage.getItem("userId") !== null
 
   state = {
     events: [],
@@ -35,7 +36,7 @@ export default class ApplicationViews extends Component {
     APIManager.getAll("events")
       .then(events => (newState.events = events))
     APIManager.getAllExpand("messages", "user")
-    .then( messages => (newState.messages = messages);
+    .then( messages => (newState.messages = messages))
     APIManager.getAll("users")
       .then(users => (newState.users = users))
     APIManager.getAllMessages("news").then(news => newState.news = news)
@@ -258,13 +259,12 @@ export default class ApplicationViews extends Component {
         <Route path="/messages/:messageId(\d+)/edit" render={props => {
                      return <MessageEditForm {...props} messages={this.state.messages} updateMessage={this.updateMessage}/>
                 }} />
+
         <Route exact path="/messages/:userId(\d+)/:friendName/friendRequest" render={(props) => {
                     return <FriendRequest {...props} addFriend={this.addFriend}/>
                 }} />
-        <Route
-          exact
-          path="/messages"
-          render={props => {
+
+        <Route exact path="/messages" render={props => {
             if (this.isAuthenticated()) {
             return <MessageList
                 {...props}

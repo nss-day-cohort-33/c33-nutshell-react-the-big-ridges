@@ -105,8 +105,8 @@
     },
     {
       "id": 3,
-      "message": "hello WORLDzaaaaaa",
-      "timeStamp": 1564021174576,
+      "message": "hello WORLDzaaaaaafrfffaaaa",
+      "timeStamp": 1564068532973,
       "userId": 1
     },
     {
@@ -116,51 +116,16 @@
       "userId": 2
     },
     {
-      "userId": 3,
-      "message": "hey",
-      "timeStamp": 1563842108904,
+      "userId": 1,
+      "message": "hello",
+      "timeStamp": 1564068450382,
       "id": 5
     },
     {
-      "id": 6,
-      "message": "ZZZzzza",
-      "timeStamp": 1564020998445,
-      "userId": 1
-    },
-    {
-      "id": 7,
-      "message": "whats going onsss",
-      "timeStamp": 1564016082835,
-      "userId": 5
-    },
-    {
-      "id": 8,
-      "message": "anything new here?aa",
-      "timeStamp": 1564016077935,
-      "userId": 5
-    },
-    {
+      "message": "anything new",
+      "timeStamp": 1564068527899,
       "userId": 1,
-      "message": "helllloQ",
-      "timestamp": 1564019532854,
-      "id": 9
-    },
-    {
-      "userId": 5,
-      "timestamp": 1564019696607,
-      "id": 10
-    },
-    {
-      "id": 11,
-      "message": "bggaaa",
-      "timeStamp": 1564021192372,
-      "userId": 1
-    },
-    {
-      "userId": 1,
-      "message": "heyyehhy",
-      "timestamp": 1564021184654,
-      "id": 12
+      "id": 6
     }
   ],
   "events": [
