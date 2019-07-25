@@ -2,7 +2,7 @@
   "users": [
     {
       "name": "Me",
-      "email": "Me@email.com",
+      "email": "Me@me",
       "password": "Me",
       "id": 1
     },
@@ -14,13 +14,13 @@
     },
     {
       "name": "a",
-      "email": "a@email.com",
+      "email": "a@a",
       "password": "a",
       "id": 3
     },
     {
       "name": "AA",
-      "email": "AA@email.com",
+      "email": "AA@b",
       "password": "a",
       "id": 4
     },
@@ -41,6 +41,12 @@
       "email": "Karla@email.com",
       "password": "Karla",
       "id": 7
+    },
+    {
+      "name": "Berkeley",
+      "email": "berkeleypaul989@gmail.com",
+      "password": "taco",
+      "id": 8
     }
   ],
   "friends": [
@@ -126,23 +132,32 @@
       "timeStamp": 1564068527899,
       "userId": 1,
       "id": 6
+    },
+    {
+      "userId": 1,
+      "timeStamp": 1563980477637,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "message": "hello",
+      "timeStamp": 1563980545068,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "message": "hello",
+      "timeStamp": 1563980711197,
+      "id": 9
     }
   ],
   "events": [
     {
-      "userId": 1,
-      "title": "fdsa",
-      "date": "fdsa",
-      "time": "fdsa",
-      "location": "fdsa",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "title": "fdsa",
-      "date": "asdf",
-      "time": "dsafa",
-      "location": "qevae",
+      "userId": 2,
+      "title": "take out trask",
+      "date": "2019-07-27",
+      "time": "15:00",
+      "location": "my house",
       "id": 2
     },
     {
@@ -156,12 +171,20 @@
   ],
   "news": [
     {
-      "id": 1,
-      "userId": 1,
-      "title": "Sam",
-      "url": "http://www.mothedev.com",
-      "synopsis": "Sam",
-      "timeStamp": 1563997126068
+      "userId": 2,
+      "url": "http://www.google.com",
+      "title": "something newaaaa",
+      "synopsis": "bbbbb",
+      "timeStamp": 1562720082584,
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "url": "http://www.google.com",
+      "title": "BBBBB22222",
+      "synopsis": "xcxc",
+      "timeStamp": 1562705971796,
+      "id": 3
     },
     {
       "id": 2,
@@ -180,12 +203,12 @@
       "timeStamp": 1563997157579
     },
     {
-      "id": 4,
-      "userId": 1,
-      "title": "Curt2",
-      "url": "https://www.facebook.com/",
-      "synopsis": "Curt2",
-      "timeStamp": 1563997683766
+      "userId": 3,
+      "url": "",
+      "title": "",
+      "synopsis": "",
+      "timeStamp": 1562706033138,
+      "id": 4
     },
     {
       "userId": 1,
@@ -212,5 +235,41 @@
       "id": 7
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "task": "five",
+      "date": "",
+      "complete": false,
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "task": "oneTwo",
+      "date": "",
+      "complete": false,
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "task": "twoTwo",
+      "date": "",
+      "complete": false,
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "task": "seven",
+      "date": "",
+      "complete": false,
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "task": "eight",
+      "date": "",
+      "complete": false,
+      "userId": 1,
+      "id": 10
+    }
+  ]
 }

@@ -1,5 +1,6 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
+import TaskList from "./tasks/TaskList";
 import { withRouter } from "react-router";
 import APIManager from "../module/APIManager";
 import EventsList from "./events/EventsList";
@@ -14,10 +15,12 @@ import Login from "./authentication/Login";
 import Register from "./authentication/Register";
 import FriendRequest from "./messages/FriendRequest"
 import FriendsList from "./friends/FriendsList"
+import TaskEditForm from "./tasks/TaskEditForm";
+import TaskForm from "./tasks/TaskForm";
 
- class ApplicationViews extends Component {
 
-  isAuthenticated = () => sessionStorage.getItem("userId") !== null
+class ApplicationViews extends Component {
+  isAuthenticated = () => sessionStorage.getItem("userId") !== null;
 
   state = {
     events: [],
@@ -39,7 +42,10 @@ import FriendsList from "./friends/FriendsList"
     .then( messages => (newState.messages = messages))
     APIManager.getAll("users")
       .then(users => (newState.users = users))
-    APIManager.getAllMessages("news").then(news => newState.news = news)
+    APIManager.getAll("tasks")
+    .then(tasks => (newState.tasks = tasks));
+    APIManager.getAllMessages("news")
+      .then(news => (newState.news = news))
       .then(() => this.setState(newState));
   }
 
@@ -120,27 +126,26 @@ import FriendsList from "./friends/FriendsList"
       });
   };
 
-  deleteArticle = (id) => {
+  deleteArticle = id => {
     return APIManager.delete("news", id)
-    .then ( () => APIManager.getAll("news"))
-    .then(news => {
+      .then(() => APIManager.getAll("news"))
+      .then(news => {
         // this.props.history.push("/news")
         this.setState({
-        news: news
-      })
-    }
-  )
-}
+          news: news
+        });
+      });
+  };
 
-  addArticle = (article) => {
+  addArticle = article => {
     return APIManager.post(article, "news")
-    .then ( () => APIManager.getAll("news"))
-    .then(news =>
+      .then(() => APIManager.getAll("news"))
+      .then(news =>
         this.setState({
-        news: news
-      })
-    )
-  }
+          news: news
+        })
+      );
+  };
 
   addFriend = (friend) => {
     if(parseInt(sessionStorage.getItem("userId") === friend.user_Id && friend.userId !== this.state.friends.userId) ) {
@@ -167,13 +172,56 @@ import FriendsList from "./friends/FriendsList"
 
   updateArticle = (editedArticle) => {
     return APIManager.put(editedArticle, "news")
-    .then ( () => APIManager.getAll("news"))
-    .then(news =>
-    this.setState({
-        news: news
-    })
-  )
-}
+      .then(() => APIManager.getAll("news"))
+      .then(news =>
+        this.setState({
+          news: news
+        })
+      );
+  };
+
+  deleteTask = id => {
+    return APIManager.delete("tasks", id)
+      .then(() => APIManager.getAll("tasks"))
+      .then(tasks => {
+        this.setState({
+          tasks: tasks
+        });
+      });
+  };
+
+  addTask = task => {
+    return APIManager.post(task, "tasks")
+      .then(() => APIManager.getAll("tasks"))
+
+      .then(tasks =>
+        this.setState({
+          tasks: tasks
+        })
+      );
+  };
+
+  updateTask = changedTask => {
+    return APIManager.put(changedTask, "tasks")
+      .then(() => APIManager.getAll("tasks"))
+
+      .then(tasks =>
+        this.setState({
+          tasks: tasks
+        })
+      );
+  };
+
+  patchTask = patchedTask => {
+    return APIManager.patch(patchedTask, "tasks")
+      .then(() => APIManager.getAll("tasks"))
+
+      .then(tasks =>
+        this.setState({
+          tasks: tasks
+        })
+      );
+  };
 
   render() {
     return (
@@ -194,44 +242,57 @@ import FriendsList from "./friends/FriendsList"
             return <Register {...props} addUser={this.addUser} />;
           }}
         />
-{/* Start news routes */}
-          <Route
-          exact path="/news" render={ props => {
+        {/* Start news routes */}
+        <Route
+          exact
+          path="/news"
+          render={props => {
             if (this.isAuthenticated()) {
-              return <NewsList  {...props}
-              deleteArticle={this.deleteArticle}
-              news={this.state.news} />
-           } else {
-             return <Redirect to="/" />
-           }
-        }}
-          />
-          <Route
-            exact path="/news/new" render={ props => {
-                    return <NewsForm  {...props}
-                                        addArticle={this.addArticle} />
-            }} />
-          <Route
-            exact path="/news/:newsId(\d+)/edit" render={ props => {
-                    return <NewsEditForm
-                                    {...props}
-                                    updateArticle={this.updateArticle} />
-                }}/>
-{/* End news routes */}
+              return (
+                <NewsList
+                  {...props}
+                  deleteArticle={this.deleteArticle}
+                  news={this.state.news}
+                />
+              );
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        />
+        <Route
+          exact
+          path="/news/new"
+          render={props => {
+            return <NewsForm {...props} addArticle={this.addArticle} />;
+          }}
+        />
+        <Route
+          exact
+          path="/news/:newsId(\d+)/edit"
+          render={props => {
+            return (
+              <NewsEditForm {...props} updateArticle={this.updateArticle} />
+            );
+          }}
+        />
+        {/* End news routes */}
         <Route
           exact
           path="/events"
           render={props => {
             if (this.isAuthenticated()) {
-            return <EventsList
-                {...props}
-                deleteEvent={this.deleteEvent}
-                events={this.state.events}
-              />
+              return (
+                <EventsList
+                  {...props}
+                  deleteEvent={this.deleteEvent}
+                  events={this.state.events}
+                />
+              );
             } else {
-                return <Redirect to="/" />
-              }
-           }}
+              return <Redirect to="/" />;
+            }
+          }}
         />
 
         <Route path="/friends" render={props => {
@@ -264,40 +325,88 @@ import FriendsList from "./friends/FriendsList"
                     return <FriendRequest {...props} addFriend={this.addFriend}/>
                 }} />
 
-        <Route exact path="/messages" render={props => {
+        <Route exact path="/tasks" render={props => {
             if (this.isAuthenticated()) {
-            return <MessageList
-                {...props}
-                messages={this.state.messages}
-                addMessage={this.addMessage}
-              />
+              return (
+                <TaskList
+                  {...props}
+                  tasks={this.state.tasks}
+                  deleteTask={this.deleteTask}
+                />
+              );
             } else {
-            return <Redirect to="/" />
-          }
-       }}
-    />
+              return <Redirect to="/" />;
+            }
+          }}
+        />
+
+        <Route
+          exact
+          path="/tasks/new"
+          render={props => {
+            return (
+              <TaskForm
+                {...props}
+                tasks={this.state.tasks}
+                addTask={this.addTask}
+              />
+            );
+          }}
+        />
+        <Route
+          path="/tasks/:taskId(\d+)/edit"
+          render={props => {
+            return (
+              <TaskEditForm
+                {...props}
+                tasks={this.state.tasks}
+                updateTask={this.updateTask}
+              />
+            );
+          }}
+        />
+
+        <Route
+          exact
+          path="/tasks"
+          render={props => {
+            if (this.isAuthenticated()) {
+              return null;
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        />
 
         <Route
           exact path="/tasks"
+          exact
+          path="/friends"
           render={props => {
             if (this.isAuthenticated()) {
-            return null;
-          }else {
-            return <Redirect to="/" />
-          }
-       }}
-      />
-
+              return null;
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        />
         <Route
-          exact path="/friends"
+          exact
+          path="/messages"
           render={props => {
             if (this.isAuthenticated()) {
-            return null;
-          }else {
-            return <Redirect to="/" />
-          }
-       }}
-      />
+              return (
+                <MessageList
+                  {...props}
+                  messages={this.state.messages}
+                  addMessage={this.addMessage}
+                />
+              );
+            } else {
+              return <Redirect to="/" />;
+            }
+          }}
+        />
       </React.Fragment>
     );
   }
