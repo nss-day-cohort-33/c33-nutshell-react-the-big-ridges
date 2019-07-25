@@ -20,6 +20,7 @@ export default class EventList extends Component {
           <div className="row">
           {this.props.events
           .filter(event => parseInt(event.userId) === parseInt(sessionStorage.getItem("userId")))
+          .reverse()
           .map(event => (
             <EventsCard key={event.id} event={event} {...this.props} />
           ))}
