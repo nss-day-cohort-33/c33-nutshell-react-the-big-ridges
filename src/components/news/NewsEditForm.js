@@ -19,9 +19,10 @@ export default class NewsEditForm extends Component {
   updateExistingArticle = evt => {
     evt.preventDefault();
 
-    //   if (!this.state.newsId) {
-    //     window.alert("Please fix this Sam");
-    //   } else {
+    if (this.state.title === "" || this.state.url === "" || this.state.synopsis === "" ) {
+        window.alert("Please Fill Out All Sections");
+    }
+    else {
         const editedArticle = {
             id: this.props.match.params.newsId,
             userId: parseInt(sessionStorage.getItem("userId")),
@@ -34,7 +35,7 @@ export default class NewsEditForm extends Component {
     this.props
       .updateArticle(editedArticle)
       .then(() => this.props.history.push("/news"));
-    // }
+    }
   };
 
   componentDidMount() {

@@ -18,9 +18,19 @@ export default class NewsForm extends Component {
 
     constructNewArticle = evt => {
         evt.preventDefault();
-        // if (this.state.articleTitle === "") {
-        //   window.alert("Please enter title");
-        // } else {
+        if (this.state.articleTitle === "" || this.state.url === "" || this.state.synopsis === "" ) {
+          window.alert("Please Fill Out All Sections");
+        }
+        if (!this.state.url.includes("http://" && "https://")){
+            window.alert("Please Add http:// or https:// to URL")
+        }
+        // if (this.state.url === "") {
+        //     window.alert("Please Enter URL");
+        // }
+        // if (this.state.synopsis === "") {
+        //     window.alert("Please Enter Synopsis");
+        // }
+        else {
           const article = {
             userId: parseInt(sessionStorage.getItem("userId")),
             title: this.state.articleTitle,
@@ -31,7 +41,7 @@ export default class NewsForm extends Component {
         this.props
             .addArticle(article)
             .then(() => this.props.history.push("/news"));
-        // }
+        }
     }
 
 
