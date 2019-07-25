@@ -15,9 +15,6 @@
 
   .eventsCard:first-child > div.eventsBody {
     background-color: lightblue;
-    width: 45;
-    height: 50
-
   }
 
   .createEventButton {

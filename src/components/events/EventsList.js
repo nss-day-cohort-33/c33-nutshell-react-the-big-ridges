@@ -9,7 +9,7 @@ export default class EventList extends Component {
           <div className="createEventButton">
             <button
               type="button"
-              className="btn-success"
+              className="btn btn-success"
               onClick={() => {
                 this.props.history.push("/events/new");
               }}
