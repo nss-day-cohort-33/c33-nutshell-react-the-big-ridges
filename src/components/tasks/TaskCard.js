@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 export default class TaskCard extends Component {
   handleCheck = event => {
@@ -6,16 +7,18 @@ export default class TaskCard extends Component {
     this.props.task.complete = !this.props.task.complete;
     this.props.updateTask(this.props.task);
   };
+  
 
   render() {
-    // let ifComplete = this.state.
-    console.log(this.props.task)
     return (
-
       <div key={this.props.task.id} className="card">
         <div className="card-body">
           <div className="card-title">
-            <h5>{this.props.task.task}</h5>
+            {this.props.task.complete ? (
+                <h5><del>{this.props.task.task}</del></h5>
+            ) : (
+              <h5>{this.props.task.task}</h5>
+            )}
             <h5>{this.props.task.date}</h5>
             <label>
               Complete:
