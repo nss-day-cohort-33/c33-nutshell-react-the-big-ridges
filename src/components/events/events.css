@@ -1,30 +1,27 @@
-/* .events {
+.row{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap
 }
 
-.card {
-    width: 10rem;
-}
+  .eventsCard:first-child {
+    font-weight: bold;
+  }
 
-.card-title {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-}
+  div.row > div {
+    background-color:whitesmoke;
 
-.card-link {
-    margin: 12px 0 0 0;
-    font-size: 0.7em;
-}
+  }
 
-/* .ownerList {
-    font-size: 0.75em;
-} */
+  .eventsCard:first-child > div.eventsBody {
+    background-color: lightblue;
+  }
 
-/* .createEventButton {
+  .createEventButton {
     display: flex;
     justify-content: space-evenly;
     margin: 0 0 10px 0;
-  }  */
+  }
+
+
+
