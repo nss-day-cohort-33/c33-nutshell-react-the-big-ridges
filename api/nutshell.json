@@ -51,32 +51,44 @@
   ],
   "friends": [
     {
-      "user_Id": 1,
-      "userId": 4,
+      "user_Id": 3,
+      "userId": 2,
       "id": 1
     },
     {
-      "id": 2,
-      "message": "things",
-      "timeStamp": 1563910676257,
-      "userId": 1
-    },
-    {
-      "id": 3,
-      "message": "blah blah blah",
-      "timeStamp": 1563910670840,
-      "userId": 1
-    },
-    {
+      "user_Id": 3,
       "userId": 1,
-      "message": "you go girl",
-      "timeStamp": 1563910526465,
+      "id": 2
+    },
+    {
+      "user_Id": 3,
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "user_Id": 3,
+      "userId": 2,
       "id": 4
     },
     {
-      "user_Id": 5,
+      "user_Id": 3,
       "userId": 2,
       "id": 5
+    },
+    {
+      "user_Id": 1,
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "user_Id": 1,
+      "userId": 6,
+      "id": 7
+    },
+    {
+      "user_Id": 1,
+      "userId": 3,
+      "id": 8
     }
   ],
   "messages": [
@@ -94,8 +106,8 @@
     },
     {
       "id": 3,
-      "message": "hello WORLDzaaaaaafrfffaaaa",
-      "timeStamp": 1564068532973,
+      "message": "hello WORLDzaaaaaafrfffaaaaddfdd",
+      "timeStamp": 1564086557283,
       "userId": 1
     },
     {
@@ -105,10 +117,10 @@
       "userId": 2
     },
     {
-      "userId": 1,
-      "message": "Sam",
-      "timeStamp": 1563914847891,
-      "id": 5
+      "id": 5,
+      "message": "Samaaazzz",
+      "timeStamp": 1564087090463,
+      "userId": 1
     },
     {
       "id": 6,
@@ -136,14 +148,27 @@
     },
     {
       "id": 10,
-      "message": "hhhaa",
-      "timeStamp": 1564069912200,
+      "message": "hhhaaaaaaaa",
+      "timeStamp": 1564082885100,
       "userId": 5
     },
     {
-      "timeStamp": 1564069908508,
+      "id": 11,
+      "message": "NEW MESSAGE",
+      "timeStamp": 1564083979149,
+      "userId": 5
+    },
+    {
+      "message": "Whats new",
+      "timeStamp": 1564083965720,
       "userId": 5,
-      "id": 11
+      "id": 12
+    },
+    {
+      "message": "hey",
+      "timeStamp": 1564084075381,
+      "userId": 3,
+      "id": 13
     }
   ],
   "events": [
