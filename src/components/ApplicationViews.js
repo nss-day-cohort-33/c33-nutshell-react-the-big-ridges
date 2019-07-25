@@ -13,8 +13,8 @@ import NewsForm from "./news/NewsForm";
 import NewsEditForm from "./news/NewsEditForm";
 import Login from "./authentication/Login";
 import Register from "./authentication/Register";
-import FriendRequest from "./messages/FriendRequest"
-import FriendsList from "./friends/FriendsList"
+import FriendRequest from "./messages/FriendRequest";
+import FriendsList from "./friends/FriendsList";
 import TaskEditForm from "./tasks/TaskEditForm";
 import TaskForm from "./tasks/TaskForm";
 
@@ -44,7 +44,7 @@ class ApplicationViews extends Component {
       .then(users => (newState.users = users))
     APIManager.getAll("tasks")
     .then(tasks => (newState.tasks = tasks));
-    APIManager.getAllMessages("news")
+    APIManager.getAllNews("news")
       .then(news => (newState.news = news))
       .then(() => this.setState(newState));
   }
@@ -128,7 +128,7 @@ class ApplicationViews extends Component {
 
   deleteArticle = id => {
     return APIManager.delete("news", id)
-      .then(() => APIManager.getAll("news"))
+      .then(() => APIManager.getAllNews("news"))
       .then(news => {
         // this.props.history.push("/news")
         this.setState({
@@ -139,7 +139,7 @@ class ApplicationViews extends Component {
 
   addArticle = article => {
     return APIManager.post(article, "news")
-      .then(() => APIManager.getAll("news"))
+      .then(() => APIManager.getAllNews("news"))
       .then(news =>
         this.setState({
           news: news
@@ -174,7 +174,7 @@ class ApplicationViews extends Component {
 
   updateArticle = (editedArticle) => {
     return APIManager.put(editedArticle, "news")
-      .then(() => APIManager.getAll("news"))
+      .then(() => APIManager.getAllNews("news"))
       .then(news =>
         this.setState({
           news: news

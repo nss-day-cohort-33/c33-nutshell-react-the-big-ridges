@@ -17,7 +17,7 @@ export default class NewsCard extends Component {
             <p>{this.props.article.synopsis}</p>
             <button
               type="button"
-              className="btn btn-success"
+              className="btn-success"
               onClick={() => {
                 this.props.history.push(`/news/${this.props.article.id}/edit`);
               }}
@@ -26,7 +26,7 @@ export default class NewsCard extends Component {
             </button>
             <button
               type="button"
-              className="btn btn-danger"
+              className="btn-danger"
               onClick={() => {
                 this.props.deleteArticle(this.props.article.id);
                 this.props.history.push("/news");

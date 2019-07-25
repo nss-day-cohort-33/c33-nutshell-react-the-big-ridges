@@ -19,11 +19,15 @@ export default class NewsList extends Component {
         </div>
         <section className="news">
           {this.props.news
+            .reverse()
             .filter(
               article =>
                 parseInt(article.userId) ===
                 parseInt(sessionStorage.getItem("userId"))
             )
+            // .sort(
+            //     (a, b) =>(b.timeStamp < a.timeStamp)
+            // )
             .map(article => (
               <NewsCard key={article.id} article={article} {...this.props} />
             ))}

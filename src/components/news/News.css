@@ -1,10 +1,12 @@
 .news {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .card {
-    width: 10rem;
+    display: flex;
+    flex-grow: inherit;
 }
 
 .card-title {
@@ -17,6 +19,7 @@
 .card-link {
     margin: 12px 0 0 0;
     font-size: 0.7em;
+    align-content: center
 }
 
 .articleButton {

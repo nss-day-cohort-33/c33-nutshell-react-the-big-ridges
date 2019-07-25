@@ -2,7 +2,7 @@
   "users": [
     {
       "name": "Me",
-      "email": "Me@email.com",
+      "email": "Me@me",
       "password": "Me",
       "id": 1
     },
@@ -14,13 +14,13 @@
     },
     {
       "name": "a",
-      "email": "a@email.com",
+      "email": "a@a",
       "password": "a",
       "id": 3
     },
     {
       "name": "AA",
-      "email": "AA@email.com",
+      "email": "AA@b",
       "password": "a",
       "id": 4
     },
@@ -43,52 +43,62 @@
       "id": 7
     },
     {
-      "name": "jo",
-      "email": "jo@jo.com",
-      "password": "jo",
+      "name": "Berkeley",
+      "email": "berkeleypaul989@gmail.com",
+      "password": "taco",
       "id": 8
     }
   ],
   "friends": [
     {
-      "user_Id": 3,
-      "userId": 2,
+      "user_Id": 1,
+      "userId": 4,
       "id": 1
     },
     {
-      "user_Id": 3,
-      "userId": 1,
+      "user_Id": 1,
+      "userId": 2,
       "id": 2
-    },
-    {
-      "user_Id": 3,
-      "userId": 2,
-      "id": 3
-    },
-    {
-      "user_Id": 3,
-      "userId": 2,
-      "id": 4
-    },
-    {
-      "user_Id": 3,
-      "userId": 2,
-      "id": 5
-    },
-    {
-      "user_Id": 1,
-      "userId": 2,
-      "id": 6
-    },
-    {
-      "user_Id": 1,
-      "userId": 6,
-      "id": 7
     },
     {
       "user_Id": 1,
       "userId": 3,
-      "id": 8
+      "id": 1
+    },
+    {
+      "user_Id": 1,
+      "userId": 5,
+      "id": 2
+    },
+    {
+      "user_Id": 2,
+      "userId": 3,
+      "id": 1
+    },
+    {
+      "user_Id": 2,
+      "userId": 5,
+      "id": 2
+    },
+    {
+      "user_Id": 5,
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "user_Id": 5,
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "user_Id": 5,
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "user_Id": 5,
+      "userId": 1,
+      "id": 6
     }
   ],
   "messages": [
@@ -106,8 +116,8 @@
     },
     {
       "id": 3,
-      "message": "hello WORLDzaaaaaafrfffaaaaddfdd",
-      "timeStamp": 1564086557283,
+      "message": "hello WORLDzaaaaaafrfffaaaa",
+      "timeStamp": 1564068532973,
       "userId": 1
     },
     {
@@ -117,27 +127,26 @@
       "userId": 2
     },
     {
-      "id": 5,
-      "message": "Samaaazzz",
-      "timeStamp": 1564087090463,
-      "userId": 1
+      "userId": 1,
+      "message": "hello",
+      "timeStamp": 1564068450382,
+      "id": 5
     },
     {
-      "id": 6,
-      "message": "drewman",
-      "timeStamp": 1563985750852,
-      "userId": 1
-    },
-    {
-      "id": 7,
-      "message": "hola",
-      "timeStamp": 1563979354182,
-      "userId": 6
+      "message": "anything new",
+      "timeStamp": 1564068527899,
+      "userId": 1,
+      "id": 6
     },
     {
       "userId": 1,
-      "message": "you go girl",
-      "timeStamp": 1563985756789,
+      "timeStamp": 1563980477637,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "message": "hello",
+      "timeStamp": 1563980545068,
       "id": 8
     },
     {
@@ -148,87 +157,66 @@
     },
     {
       "id": 10,
-      "message": "hhhaaaaaaaa",
-      "timeStamp": 1564082885100,
+      "message": "hhhaa",
+      "timeStamp": 1564069912200,
       "userId": 5
     },
     {
-      "id": 11,
-      "message": "NEW MESSAGE",
-      "timeStamp": 1564083979149,
-      "userId": 5
-    },
-    {
-      "message": "Whats new",
-      "timeStamp": 1564083965720,
+      "timeStamp": 1564069908508,
       "userId": 5,
-      "id": 12
-    },
-    {
-      "message": "hey",
-      "timeStamp": 1564084075381,
-      "userId": 3,
-      "id": 13
+      "id": 11
     }
   ],
   "events": [
     {
-      "userId": 1,
-      "title": "fdsa",
-      "date": "fdsa",
-      "time": "fdsa",
-      "location": "fdsa",
-      "id": 1
-    },
-    {
-      "userId": 1,
-      "title": "fdsa",
-      "date": "asdf",
-      "time": "dsafa",
-      "location": "qevae",
+      "userId": 5,
+      "title": "take out trask",
+      "date": "2019-07-27",
+      "time": "15:00",
+      "location": "my house",
       "id": 2
     },
     {
-      "userId": 6,
-      "title": "party",
-      "date": "tomorrow",
-      "time": "8",
-      "location": "NSS",
+      "userId": 1,
+      "title": "sam",
+      "date": "sam",
+      "time": "sam",
+      "location": "sam",
       "id": 3
     },
     {
-      "userId": 1,
-      "title": "treechop",
-      "date": "today",
-      "time": "now",
-      "location": "here",
+      "userId": 5,
+      "title": "s",
+      "date": "s",
+      "time": "s",
+      "location": "s",
       "id": 4
-    },
-    {
-      "userId": 8,
-      "title": "jo stuff",
-      "date": "august 1",
-      "time": "anytime",
-      "location": "your house",
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "title": "event",
-      "date": "date",
-      "time": "time",
-      "location": "location",
-      "id": 6
     }
   ],
   "news": [
     {
-      "id": 1,
+      "userId": 2,
+      "url": "http://www.google.com",
+      "title": "something newaaaa",
+      "synopsis": "bbbbb",
+      "timeStamp": 1562720082584,
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "url": "http://www.google.com",
+      "title": "BBBBB22222",
+      "synopsis": "xcxc",
+      "timeStamp": 1562705971796,
+      "id": 3
+    },
+    {
+      "id": 2,
       "userId": 1,
-      "title": "Sam",
+      "title": "Drew",
       "url": "http://www.mothedev.com",
-      "synopsis": "Sam",
-      "timeStamp": 1563997126068
+      "synopsis": "Drew",
+      "timeStamp": 1563997155865
     },
     {
       "id": 3,
@@ -239,6 +227,22 @@
       "timeStamp": 1563997157579
     },
     {
+      "userId": 3,
+      "url": "",
+      "title": "",
+      "synopsis": "",
+      "timeStamp": 1562706033138,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "title": "Joe",
+      "url": "http://www.mothedev.com",
+      "synopsis": "Joe",
+      "timeStamp": 1563997022096,
+      "id": 5
+    },
+    {
       "userId": 1,
       "title": "Mo",
       "url": "http://www.mothedev.com",
@@ -247,37 +251,125 @@
       "id": 6
     },
     {
+      "id": 7,
       "userId": 5,
-      "title": "ssaaaaam",
-      "url": "http://www.mothedev.com",
-      "synopsis": "samamamama",
-      "timeStamp": 1563999557131,
-      "id": 7
+      "title": "ss",
+      "url": "http://s",
+      "synopsis": "ss",
+      "timeStamp": 1564081693693
     },
     {
-      "userId": 8,
-      "title": "article",
-      "url": "www.www.com",
-      "synopsis": "thinasdlknas;ldnfv",
-      "timeStamp": 1564067655979,
-      "id": 8
+      "id": 10,
+      "userId": 5,
+      "title": "s",
+      "url": "https://ffj.com",
+      "synopsis": "sdddd",
+      "timeStamp": 1564081637079
     },
     {
-      "userId": 1,
-      "title": "blah",
-      "url": "blah",
-      "synopsis": "blah",
-      "timeStamp": 1564083028042,
-      "id": 9
+      "id": 12,
+      "userId": 5,
+      "title": "s",
+      "url": "http://ffj.com",
+      "synopsis": "ssssd",
+      "timeStamp": 1564086625857
+    },
+    {
+      "id": 13,
+      "userId": 5,
+      "title": "new form",
+      "url": "http://ffj.com",
+      "synopsis": "sssss",
+      "timeStamp": 1564081634076
+    },
+    {
+      "userId": 5,
+      "title": "Curt2",
+      "url": "https://ffj.com",
+      "synopsis": "ssssss",
+      "timeStamp": 1564081689817,
+      "id": 14
+    },
+    {
+      "userId": 5,
+      "title": "ssss",
+      "url": "https://ffj.com",
+      "synopsis": "hgh",
+      "timeStamp": 1564081794515,
+      "id": 15
+    },
+    {
+      "id": 16,
+      "userId": 5,
+      "title": "sss",
+      "url": "https://ffj.com",
+      "synopsis": "sssss",
+      "timeStamp": 1564086621552
     }
   ],
   "tasks": [
     {
-      "task": "rake the butt",
-      "date": "2222-08-22",
+      "task": "five",
+      "date": "",
       "complete": false,
       "userId": 1,
-      "id": 1
+      "id": 6
+    },
+    {
+      "task": "oneTwo",
+      "date": "",
+      "complete": false,
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "task": "twoTwo",
+      "date": "",
+      "complete": false,
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "task": "seven",
+      "date": "",
+      "complete": false,
+      "userId": 1,
+      "id": 9
+    },
+    {
+      "task": "eight",
+      "date": "",
+      "complete": false,
+      "userId": 1,
+      "id": 10
+    },
+    {
+      "id": 11,
+      "userId": 8,
+      "task": "onetwo",
+      "date": "2019-07-08",
+      "complete": false
+    },
+    {
+      "id": 12,
+      "userId": 8,
+      "task": "threefour",
+      "date": "2019-07-10",
+      "complete": false
+    },
+    {
+      "task": "five",
+      "date": "2019-07-23",
+      "complete": false,
+      "userId": 8,
+      "id": 13
+    },
+    {
+      "task": "sss",
+      "date": "2019-07-26",
+      "complete": false,
+      "userId": 5,
+      "id": 14
     }
   ]
 }
