@@ -7,7 +7,7 @@ export default class NewsCard extends Component {
   render() {
     return (
       <div key={this.props.article.id} className="card">
-        <div className="card-body d-flex flex-wrap">
+        <div className="card-body">
           <div className="card-title">
             <h5>{this.props.article.title}</h5>
             {/* <Link className="nav-link" to={this.props.article.url}>Article Link</Link> */}
