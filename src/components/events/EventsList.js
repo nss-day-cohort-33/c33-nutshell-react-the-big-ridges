@@ -17,9 +17,14 @@ export default class EventList extends Component {
               Create Event
             </button>
           </div>
-          {this.props.events.map(event => (
+          <div className="row">
+          {this.props.events
+          .filter(event => parseInt(event.userId) === parseInt(sessionStorage.getItem("userId")))
+          .reverse()
+          .map(event => (
             <EventsCard key={event.id} event={event} {...this.props} />
           ))}
+          </div>
         </React.Fragment>
       );
     }

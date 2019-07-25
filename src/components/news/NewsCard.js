@@ -6,7 +6,7 @@ import "./News.css";
 export default class NewsCard extends Component {
   render() {
     return (
-      <div key={this.props.article.id} className="card">
+      <div key={this.props.article.id} className="card w-25 bg-light">
         <div className="card-body">
           <div className="card-title">
             <h5>{this.props.article.title}</h5>
@@ -26,12 +26,11 @@ export default class NewsCard extends Component {
             </button>
             <button
               type="button"
-              className="btn btn-success"
+              className="btn btn-danger"
               onClick={() => {
                 this.props.deleteArticle(this.props.article.id);
                 this.props.history.push("/news");
               }}
-              className="card-link"
             >
               Delete
             </button>
